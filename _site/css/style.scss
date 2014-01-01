@@ -24,6 +24,11 @@
 *
 */
 
+body {color: #444;}
+h1, h2, h3 {color: #222;}
+a {color: sienna;}
+a:hover, a:focus {color: maroon;}
+
 /*! 
 *
 * 	fonts 
@@ -31,10 +36,19 @@
 */
 body {font-family: Georgia, serif;}
 
-h1, h2 {font-family: 'Old Standard TT', serif; font-weight: 700;}
+h1, h2, h3 {font-family: 'Old Standard TT', serif; font-weight: 700; }
+
+div.highlight {border-radius: 5px;}
+
+.highlight {font-size: 80%}
+
+pre {padding: 2em;border-radius: 6px;}
+
+@import "syntax";
+
 /*!
 *
 * 	layout 
 *
 */
-#wrapper {margin: 2em auto; max-width: 1000px;}
+#wrapper {margin: 2em auto; max-width: 1000px; padding: 2em;}
