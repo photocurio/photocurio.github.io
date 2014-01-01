@@ -1,3 +1,40 @@
-/*! NORMALIZE */
+* {box-sizing: border-box;}
+
+/*! 
+*
+* 	normalize
+*
+*/
 
 @import "normalize";
+
+
+/*! 
+* 	clearfix 
+*/
+.clearfix:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+/*!
+*
+* 	colors 
+*
+*/
+
+/*! 
+*
+* 	fonts 
+*
+*/
+body {font-family: Georgia, serif;}
+
+h1, h2 {font-family: 'Old Standard TT', serif; font-weight: 700;}
+/*!
+*
+* 	layout 
+*
+*/
+#wrapper {margin: 2em auto; max-width: 1000px;}
