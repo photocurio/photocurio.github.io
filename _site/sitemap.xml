@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://localhost:4000/jekyll/update/2013/12/29/welcome-to-jekyll.html</loc>
+        <lastmod>2013-12-30T15:33:11-05:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://localhost:4000/wordpress/forms/paypal/2013/12/30/swichable-one-time-or-recurring-paypal-donation-button.html
+        </loc>
+        <lastmod>2013-12-30T15:33:11-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://localhost:4000/more/2014/01/01/happy-new-year.html</loc>
+        <lastmod>2014-01-01T11:59:07-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://localhost:4000/</loc>
+        <lastmod>2014-01-01T12:02:04-05:00</lastmod>
+    </url>
+</urlset>

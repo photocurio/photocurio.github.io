@@ -1,0 +1,4 @@
+name: "Peter Mumford's Web Dev Blog"
+markdown: redcarpet
+url: "http://localhost:4000"
+

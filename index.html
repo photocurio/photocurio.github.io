@@ -1,4 +1,14 @@
-<h1>Hello world</h1>
-<p>from Peter on New Years Day, 2014</p>
-=======
-<p>from Peter</p>
+---
+layout: default
+title: Peter Mumford
+subtitle: WordPress and Jekyll web development
+---
+
+<div id="home">
+  <h3>Recent Blog Posts</h3>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
