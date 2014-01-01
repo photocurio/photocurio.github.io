@@ -26,8 +26,8 @@
 
 body {color: #444;}
 h1, h2, h3 {color: #222;}
-a {color: sienna;}
-a:hover, a:focus {color: maroon;}
+a {color: sienna; text-decoration: none;}
+a:hover, a:focus {color: maroon;text-decoration: underline;}
 
 /*! 
 *
