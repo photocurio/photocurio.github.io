@@ -23,41 +23,48 @@
 
 <p>Try this to start:</p>
 
-<div class="highlight"><pre><code class="html">// This function will list three posts in the sidebar with like tags.
-// Activated by the shortcode <span class="ni">&amp;#91;</span>related-posts]
-function related_posts_widget() {
-    ob_start();
-    global $post;
-    $tags = wp_get_post_tags( $post-&gt;ID );
-    foreach ( $tags as $tag ) {
-        $tagID[] = $tag-&gt;term_id;
-    }
-    if ($tagID) {
-        $args = array(
-            &#39;tag__in&#39;   =&gt; $tagID,
-            &#39;post__not_in&#39; =&gt; array($post-&gt;ID),
-            &#39;showposts&#39;  =&gt; 3
-        );
-        $related_query = new WP_Query($args);
-        if( $related_query -&gt; have_posts() ) { ?&gt;
-        <span class="ni">&amp;lt;</span>ul&gt;
-        <span class="ni">&amp;lt;</span>?php while ($related_query -&gt; have_posts()) : $related_query -&gt; the_post(); ?&gt;
-        <span class="ni">&amp;lt;</span>li&gt;
-        <span class="ni">&amp;lt;</span>a href=&quot;<span class="cp">&lt;?php the_permalink(); ?&gt;</span>&quot; title=&quot;<span class="ni">&amp;lt;</span>?php the_title_attribute(); ?&gt;&quot; rel=&quot;bookmark&quot;&gt;<span class="ni">&amp;lt;</span>?php the_title(); ?&gt;<span class="ni">&amp;lt;</span>/a&gt;
-        <span class="ni">&amp;lt;</span>/li&gt;
-        <span class="ni">&amp;lt;</span>?php endwhile; ?&gt;
-        <span class="ni">&amp;lt;</span>/ul&gt;
-        <span class="ni">&amp;lt;</span>?php }
-        wp_reset_query();
-    }
-    $output = ob_get_contents();
-    ob_end_clean();
-    return $output;
-}
-add_shortcode(&#39;related-posts&#39;,&#39;related_posts_widget&#39;);<span class="nt">&lt;/pre&gt;</span>
-Also, for this to work you need to be able to put shortcodes in widgets, which does not work with the default WP installation. To enable shortcodes in widgets add this to your functions.php:
-<span class="nt">&lt;pre&gt;</span> add_filter(&#39;widget_text&#39;, &#39;do_shortcode&#39;);
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<span class="c1">// This function will list three posts in the sidebar with like tags.</span>
+<span class="c1">// Activated by the shortcode [related-posts]</span>
+<span class="k">function</span> <span class="nf">related_posts_widget</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nb">ob_start</span><span class="p">();</span>
+    <span class="k">global</span> <span class="nv">$post</span><span class="p">;</span>
+    <span class="nv">$tags</span> <span class="o">=</span> <span class="nx">wp_get_post_tags</span><span class="p">(</span> <span class="nv">$post</span><span class="o">-&gt;</span><span class="na">ID</span> <span class="p">);</span>
+    <span class="k">foreach</span> <span class="p">(</span> <span class="nv">$tags</span> <span class="k">as</span> <span class="nv">$tag</span> <span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$tagID</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$tag</span><span class="o">-&gt;</span><span class="na">term_id</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nv">$tagID</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;tag__in&#39;</span> <span class="o">=&gt;</span> <span class="nv">$tagID</span><span class="p">,</span>
+            <span class="s1">&#39;post__not_in&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nv">$post</span><span class="o">-&gt;</span><span class="na">ID</span><span class="p">),</span>
+            <span class="s1">&#39;showposts&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span>
+        <span class="p">);</span>
+        <span class="nv">$related_query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WP_Query</span><span class="p">(</span><span class="nv">$args</span><span class="p">);</span>
+        <span class="k">if</span><span class="p">(</span> <span class="nv">$related_query</span> <span class="o">-&gt;</span> <span class="na">have_posts</span><span class="p">()</span> <span class="p">)</span> <span class="p">{</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">            &lt;ul&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">while</span> <span class="p">(</span><span class="nv">$related_query</span> <span class="o">-&gt;</span> <span class="na">have_posts</span><span class="p">())</span> <span class="o">:</span> <span class="nv">$related_query</span> <span class="o">-&gt;</span> <span class="na">the_post</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">                &lt;li&gt;</span>
+<span class="x">                    &lt;a   href=&quot;</span><span class="cp">&lt;?php</span> <span class="nx">the_permalink</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot; </span>
+<span class="x">                        title=&quot;</span><span class="cp">&lt;?php</span> <span class="nx">the_title_attribute</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot; </span>
+<span class="x">                        rel=&quot;bookmark&quot;&gt;</span>
+<span class="x">                    </span><span class="cp">&lt;?php</span> <span class="nx">the_title</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">                    &lt;/a&gt;</span>
+<span class="x">                &lt;/li&gt;</span>
+<span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">endwhile</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">            &lt;/ul&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span> <span class="p">}</span>
+        <span class="nx">wp_reset_query</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="nv">$output</span> <span class="o">=</span> <span class="nb">ob_get_contents</span><span class="p">();</span>
+    <span class="nb">ob_end_clean</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nv">$output</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">add_shortcode</span><span class="p">(</span><span class="s1">&#39;related-posts&#39;</span><span class="p">,</span><span class="s1">&#39;related_posts_widget&#39;</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div>
+
+<p>Also, for this to work you need to be able to put shortcodes in widgets, which does not work with the default WP installation. To enable shortcodes in widgets add this to your functions.php:
+<code>add_filter(&#39;widget_text&#39;, &#39;do_shortcode&#39;);</code></p>
 
 </div>
 <div id="sidebar">
