@@ -6,8 +6,8 @@
 *
 */
 
-@import "normalize";
-
+@import "bp_reset";
+@import "bp_typography";
 
 /*! 
 * 	clearfix 
@@ -34,7 +34,7 @@ a:hover, a:focus {color: maroon;text-decoration: underline;}
 * 	fonts 
 *
 */
-body {font-family: Georgia, serif;}
+body {font-family: Georgia, serif; font-size: 100%;}
 
 h1, h2, h3 {font-family: 'Old Standard TT', serif; font-weight: 700; }
 
