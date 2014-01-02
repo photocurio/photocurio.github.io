@@ -1,4 +1,5 @@
-name: "Peter Mumford&rsquo;s Web Dev Blog"
+name: "Peter Mumford&rsquo;s <span>W</span>eb Dev Blog"
+subhead: "WordPress Problem Solving <i class='fa fa-umbrella fa-lg'></i>"
 markdown: redcarpet
 url: "http://petermumford.net"
 permalink: "/:categories/:title.html"

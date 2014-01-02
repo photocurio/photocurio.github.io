@@ -8,16 +8,25 @@
         <meta name="viewport" content="width=device-width">
 		<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet'>
         <link rel="stylesheet" href="/css/style.css">
-
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     </head>
     <body>
     <div id="wrapper" class="clearfix">
+	<div class="header clearfix">
+	<p class="vard">
+	<span class="fn">Peter Mumford</span><br>
+	<span class="locality">Somerville</span>, <span class="region">MA</span><br>
+	<span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span><br>
+	<span class="tel">781&middot;960&middot;7049</span>
+	</p>
+	<h1 class="title"><a href="/">Peter Mumford&rsquo;s <span>W</span>eb Dev Blog</a></h1>
+	<h3 class="subhead">WordPress Problem Solving <i class='fa fa-umbrella fa-lg'></i></h2>
+</div>        	
 <div class="site clearfix">
-<h1 class="title">A Simple Related Posts Widget</h1>
-<p class="meta">02 Dec 2013</p>
-
-<div class="post">
-<p>If you want to put some related posts in a widget you can use the smart <a href="http://wordpress.org/plugins/yet-another-related-posts-plugin/">YARPP</a> plugin. </p>
+	<h1>A Simple Related Posts Widget</h1>
+	<p class="meta">02 Dec 2013</p>
+	<div class="post">
+	<p>If you want to put some related posts in a widget you can use the smart <a href="http://wordpress.org/plugins/yet-another-related-posts-plugin/">YARPP</a> plugin. </p>
 
 <p>Or, if you merely want to list posts with matching tags, you can put a function in your Wordpress theme, or make your own plugin. In some ways this is better than the fuzzy logic of YARPP because it gives you more control: you just give posts the same tag, and you know they are related. Plus, its easy to edit such simple code to suit (if you know how <a href="http://codex.wordpress.org/The_Loop">the loop</a> works). </p>
 
@@ -64,22 +73,22 @@
 <p>Also, for this to work you need to be able to put shortcodes in widgets, which does not work with the default WP installation. To enable shortcodes in widgets add this to your functions.php:
 <code>add_filter(&#39;widget_text&#39;, &#39;do_shortcode&#39;);</code></p>
 
-</div>
-<div id="sidebar">
-  <h3>Blog Posts from Me</h3>
-  <ul>
-  	<li><span><a href="/">Home</a></span></li>
-    
-      <li><span>30 Dec 2013</span> &raquo; <a href="/wordpress/swichable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></li>
-    
-      <li><span>12 Dec 2013</span> &raquo; <a href="/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html">Categories, Tags and Custom Taxonomies for WordPress</a></li>
-    
-      <li><span>02 Dec 2013</span> &raquo; <a href="/wordpress/simple-related-posts-widget.html">A Simple Related Posts Widget</a></li>
-    
-      <li><span>29 May 2013</span> &raquo; <a href="/wordpress/responsive-comment-forms.html">Responsive Comment Forms</a></li>
-    
-  </ul>
-</div>
+	</div>
+	<div id="sidebar">
+	  <h3>Blog Posts from Me</h3>
+	  <ul>
+	  	<li><span><a href="/">Home</a></span></li>
+	    
+	      <li><span>30 Dec 2013</span> &raquo; <a href="/wordpress/swichable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></li>
+	    
+	      <li><span>12 Dec 2013</span> &raquo; <a href="/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html">Categories, Tags and Custom Taxonomies for WordPress</a></li>
+	    
+	      <li><span>02 Dec 2013</span> &raquo; <a href="/wordpress/simple-related-posts-widget.html">A Simple Related Posts Widget</a></li>
+	    
+	      <li><span>29 May 2013</span> &raquo; <a href="/wordpress/responsive-comment-forms.html">Responsive Comment Forms</a></li>
+	    
+	  </ul>
+	</div>
 
 		<div class="footer">
             <div class="contact">

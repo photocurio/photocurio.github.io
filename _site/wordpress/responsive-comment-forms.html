@@ -8,16 +8,25 @@
         <meta name="viewport" content="width=device-width">
 		<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet'>
         <link rel="stylesheet" href="/css/style.css">
-
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     </head>
     <body>
     <div id="wrapper" class="clearfix">
+	<div class="header clearfix">
+	<p class="vard">
+	<span class="fn">Peter Mumford</span><br>
+	<span class="locality">Somerville</span>, <span class="region">MA</span><br>
+	<span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span><br>
+	<span class="tel">781&middot;960&middot;7049</span>
+	</p>
+	<h1 class="title"><a href="/">Peter Mumford&rsquo;s <span>W</span>eb Dev Blog</a></h1>
+	<h3 class="subhead">WordPress Problem Solving <i class='fa fa-umbrella fa-lg'></i></h2>
+</div>        	
 <div class="site clearfix">
-<h1 class="title">Responsive Comment Forms</h1>
-<p class="meta">29 May 2013</p>
-
-<div class="post">
-<p>After you make the front page of your theme responsive (see my <a href="href=%22http://topheavypilesofbooks.com/2012/10/coding-a-responsive-site/">previous post</a> ), you need to check the other templates. And one area that might break your theme, and resists the simple CSS-media-queries method, is<strong> the comments form,</strong> typically loaded on the single post template. That&#39;s because forms tend to have fixed widths, and whats more, the width is defined with inline HTML, or at least its defined that way by default in the Wordpress comments template. The template outputs the following HTML for the Name field:</p>
+	<h1>Responsive Comment Forms</h1>
+	<p class="meta">29 May 2013</p>
+	<div class="post">
+	<p>After you make the front page of your theme responsive (see my <a href="href=%22http://topheavypilesofbooks.com/2012/10/coding-a-responsive-site/">previous post</a> ), you need to check the other templates. And one area that might break your theme, and resists the simple CSS-media-queries method, is<strong> the comments form,</strong> typically loaded on the single post template. That&#39;s because forms tend to have fixed widths, and whats more, the width is defined with inline HTML, or at least its defined that way by default in the Wordpress comments template. The template outputs the following HTML for the Name field:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;author&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">size=</span><span class="s">&quot;30&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="na">name=</span><span class="s">&quot;author&quot;</span><span class="nt">&gt;</span>
 </code></pre></div>
@@ -37,29 +46,30 @@
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nv">$args</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nx">comment_form</span><span class="p">(</span><span class="nv">$args</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="nx">comment_form</span><span class="p">(</span><span class="nv">$args</span><span class="p">);</span> 
+<span class="cp">?&gt;</span><span class="x"></span>
 </code></pre></div>
 
 <p>Just replace the <code>comment_form();</code> hook in your theme with the above code. And BTW, it won&#39;t work unless you have the <strong>Mobile Client Detection Plugin</strong> installed. That&#39;s what lets you use the <code>is_mobile()</code> conditional.</p>
 
 <p>What this code is doing is defining smaller textarea fields if the user agent is &#39;mobile&#39;. See the <code>size=&quot;27&quot;</code> parts? that&#39;s the key. And for the big textarea, I use cols=&quot;28&quot;. These numbers may be &quot;magic numbers&quot;, i.e. they just happen to fit my theme with the font I use, but its no worse than the bad magic numbers that were in there before.</p>
 
-</div>
-<div id="sidebar">
-  <h3>Blog Posts from Me</h3>
-  <ul>
-  	<li><span><a href="/">Home</a></span></li>
-    
-      <li><span>30 Dec 2013</span> &raquo; <a href="/wordpress/swichable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></li>
-    
-      <li><span>12 Dec 2013</span> &raquo; <a href="/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html">Categories, Tags and Custom Taxonomies for WordPress</a></li>
-    
-      <li><span>02 Dec 2013</span> &raquo; <a href="/wordpress/simple-related-posts-widget.html">A Simple Related Posts Widget</a></li>
-    
-      <li><span>29 May 2013</span> &raquo; <a href="/wordpress/responsive-comment-forms.html">Responsive Comment Forms</a></li>
-    
-  </ul>
-</div>
+	</div>
+	<div id="sidebar">
+	  <h3>Blog Posts from Me</h3>
+	  <ul>
+	  	<li><span><a href="/">Home</a></span></li>
+	    
+	      <li><span>30 Dec 2013</span> &raquo; <a href="/wordpress/swichable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></li>
+	    
+	      <li><span>12 Dec 2013</span> &raquo; <a href="/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html">Categories, Tags and Custom Taxonomies for WordPress</a></li>
+	    
+	      <li><span>02 Dec 2013</span> &raquo; <a href="/wordpress/simple-related-posts-widget.html">A Simple Related Posts Widget</a></li>
+	    
+	      <li><span>29 May 2013</span> &raquo; <a href="/wordpress/responsive-comment-forms.html">Responsive Comment Forms</a></li>
+	    
+	  </ul>
+	</div>
 
 		<div class="footer">
             <div class="contact">

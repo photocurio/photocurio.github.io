@@ -8,16 +8,25 @@
         <meta name="viewport" content="width=device-width">
 		<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet'>
         <link rel="stylesheet" href="/css/style.css">
-
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     </head>
     <body>
     <div id="wrapper" class="clearfix">
+	<div class="header clearfix">
+	<p class="vard">
+	<span class="fn">Peter Mumford</span><br>
+	<span class="locality">Somerville</span>, <span class="region">MA</span><br>
+	<span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span><br>
+	<span class="tel">781&middot;960&middot;7049</span>
+	</p>
+	<h1 class="title"><a href="/">Peter Mumford&rsquo;s <span>W</span>eb Dev Blog</a></h1>
+	<h3 class="subhead">WordPress Problem Solving <i class='fa fa-umbrella fa-lg'></i></h2>
+</div>        	
 <div class="site clearfix">
-<h1 class="title">Categories, Tags and Custom Taxonomies for WordPress</h1>
-<p class="meta">12 Dec 2013</p>
-
-<div class="post">
-<p>Wordpress comes with 2 taxonomies built in: Categories and Tags, but you can add <em>Custom Taxonomies</em> if you like.  I was building WP sites for three years before I needed to set up a custom taxonomy for a client. </p>
+	<h1>Categories, Tags and Custom Taxonomies for WordPress</h1>
+	<p class="meta">12 Dec 2013</p>
+	<div class="post">
+	<p>Wordpress comes with 2 taxonomies built in: Categories and Tags, but you can add <em>Custom Taxonomies</em> if you like.  I was building WP sites for three years before I needed to set up a custom taxonomy for a client. </p>
 
 <p>There is a lot you can do with Categories and Tags. I&#39;ve always told my clients &quot;use as few categories as you need to organize your site, and as many tags as you like&quot;. That sums it up.  Categories are to divide your content into sections, tags are open ended, and can be used to add keywords to your posts.</p>
 
@@ -31,22 +40,22 @@
 
 <p>One more thing: the custom taxonomy function should be in a plugin file, not simply added to the theme&#39;s functions.php file. The reason is simple: if you put the taxonomy into the theme, and you ever have to change or de-activate the theme, your custom taxonomy will disappear. That content would not be deleted of course, its all still in the database, but the Wordpress engine will have no knowledge of its existence.  All you need to do is put the taxonomy functions into a separate php file, and save it as a plugin, and activate it from the WP admin.</p>
 
-</div>
-<div id="sidebar">
-  <h3>Blog Posts from Me</h3>
-  <ul>
-  	<li><span><a href="/">Home</a></span></li>
-    
-      <li><span>30 Dec 2013</span> &raquo; <a href="/wordpress/swichable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></li>
-    
-      <li><span>12 Dec 2013</span> &raquo; <a href="/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html">Categories, Tags and Custom Taxonomies for WordPress</a></li>
-    
-      <li><span>02 Dec 2013</span> &raquo; <a href="/wordpress/simple-related-posts-widget.html">A Simple Related Posts Widget</a></li>
-    
-      <li><span>29 May 2013</span> &raquo; <a href="/wordpress/responsive-comment-forms.html">Responsive Comment Forms</a></li>
-    
-  </ul>
-</div>
+	</div>
+	<div id="sidebar">
+	  <h3>Blog Posts from Me</h3>
+	  <ul>
+	  	<li><span><a href="/">Home</a></span></li>
+	    
+	      <li><span>30 Dec 2013</span> &raquo; <a href="/wordpress/swichable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></li>
+	    
+	      <li><span>12 Dec 2013</span> &raquo; <a href="/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html">Categories, Tags and Custom Taxonomies for WordPress</a></li>
+	    
+	      <li><span>02 Dec 2013</span> &raquo; <a href="/wordpress/simple-related-posts-widget.html">A Simple Related Posts Widget</a></li>
+	    
+	      <li><span>29 May 2013</span> &raquo; <a href="/wordpress/responsive-comment-forms.html">Responsive Comment Forms</a></li>
+	    
+	  </ul>
+	</div>
 
 		<div class="footer">
             <div class="contact">

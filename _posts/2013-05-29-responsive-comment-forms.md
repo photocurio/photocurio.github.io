@@ -24,7 +24,8 @@ if (is_mobile()) {
 } else {
 	$args = '';
 }
-comment_form($args); ?>
+comment_form($args); 
+?>
 {% endhighlight %}
 
 Just replace the `comment_form();` hook in your theme with the above code. And BTW, it won't work unless you have the __Mobile Client Detection Plugin__ installed. That's what lets you use the `is_mobile()` conditional.
