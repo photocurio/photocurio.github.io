@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://localhost:4000/jekyll/welcome-to-jekyll.html</loc>
+        <loc>http://petermumford.net/jekyll/welcome-to-jekyll.html</loc>
         <lastmod>2014-01-01T14:42:04-05:00</lastmod>
     </url>
     <url>
         <loc>
-            http://localhost:4000/wordpress/swichable-one-time-or-recurring-paypal-donation-button.html
+            http://petermumford.net/wordpress/swichable-one-time-or-recurring-paypal-donation-button.html
         </loc>
         <lastmod>2014-01-01T14:42:16-05:00</lastmod>
     </url>
     <url>
-        <loc>http://localhost:4000/more/happy-new-year.html</loc>
+        <loc>http://petermumford.net/more/happy-new-year.html</loc>
         <lastmod>2014-01-01T13:41:28-05:00</lastmod>
     </url>
     <url>
-        <loc>http://localhost:4000/</loc>
+        <loc>http://petermumford.net/</loc>
         <lastmod>2014-01-01T15:43:43-05:00</lastmod>
     </url>
 </urlset>

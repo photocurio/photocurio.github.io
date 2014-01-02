@@ -1,5 +1,5 @@
 name: "Peter Mumford&rsquo;s Web Dev Blog"
 markdown: redcarpet
-url: "http://localhost:4000"
+url: "http://petermumford.net"
 permalink: "/:categories/:title.html"
 
