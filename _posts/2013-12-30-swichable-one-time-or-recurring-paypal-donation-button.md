@@ -5,7 +5,6 @@ categories: WordPress
 ---
 
 If you need a Paypal donation button, and you want the user to be able to select either one-time or recurring donations, its not so simple. These require completely different form submissions to Paypal.  So I wrote this form, and an accompanying jQuery script. It lets the user switch back and forth between one time and recurring donation options.
-Jekyll also offers powerful support for code snippets:
 
 {% highlight html %}
 <div class="donationContainer">
