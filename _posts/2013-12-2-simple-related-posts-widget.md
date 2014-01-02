@@ -7,9 +7,9 @@ categories: wordpress
 
 If you want to put some related posts in a widget you can use the smart <a href="http://wordpress.org/plugins/yet-another-related-posts-plugin/">YARPP</a> plugin. 
 
-Or, if you merely want to list posts with matching tags, you can put a function in your Wordpress theme. In some ways this is better than the fuzzy logic of YARPP because it gives you more control: you just give posts the same tag, and you know they are related. Plus, its easy to edit such simple code to suit (if you know how <a href="http://codex.wordpress.org/The_Loop">the loop</a> works). 
+Or, if you merely want to list posts with matching tags, you can put a function in your Wordpress theme, or make your own plugin. In some ways this is better than the fuzzy logic of YARPP because it gives you more control: you just give posts the same tag, and you know they are related. Plus, its easy to edit such simple code to suit (if you know how <a href="http://codex.wordpress.org/The_Loop">the loop</a> works). 
 
-Try this to start:
+Try this function to start:
 {% highlight php %}
 <?php
 // This function will list three posts in the sidebar with like tags.
@@ -32,9 +32,7 @@ function related_posts_widget() {
 			<ul>
 			<?php while ($related_query -> have_posts()) : $related_query -> the_post(); ?>
 				<li>
-					<a	href="<?php the_permalink(); ?>" 
-						title="<?php the_title_attribute(); ?>" 
-						rel="bookmark">
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark">
 					<?php the_title(); ?>
 					</a>
 				</li>

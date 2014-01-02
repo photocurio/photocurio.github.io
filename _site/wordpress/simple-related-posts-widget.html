@@ -19,9 +19,9 @@
 <div class="post">
 <p>If you want to put some related posts in a widget you can use the smart <a href="http://wordpress.org/plugins/yet-another-related-posts-plugin/">YARPP</a> plugin. </p>
 
-<p>Or, if you merely want to list posts with matching tags, you can put a function in your Wordpress theme. In some ways this is better than the fuzzy logic of YARPP because it gives you more control: you just give posts the same tag, and you know they are related. Plus, its easy to edit such simple code to suit (if you know how <a href="http://codex.wordpress.org/The_Loop">the loop</a> works). </p>
+<p>Or, if you merely want to list posts with matching tags, you can put a function in your Wordpress theme, or make your own plugin. In some ways this is better than the fuzzy logic of YARPP because it gives you more control: you just give posts the same tag, and you know they are related. Plus, its easy to edit such simple code to suit (if you know how <a href="http://codex.wordpress.org/The_Loop">the loop</a> works). </p>
 
-<p>Try this to start:</p>
+<p>Try this function to start:</p>
 
 <div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
 <span class="c1">// This function will list three posts in the sidebar with like tags.</span>
@@ -44,9 +44,7 @@
 <span class="x">            &lt;ul&gt;</span>
 <span class="x">            </span><span class="cp">&lt;?php</span> <span class="k">while</span> <span class="p">(</span><span class="nv">$related_query</span> <span class="o">-&gt;</span> <span class="na">have_posts</span><span class="p">())</span> <span class="o">:</span> <span class="nv">$related_query</span> <span class="o">-&gt;</span> <span class="na">the_post</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">                &lt;li&gt;</span>
-<span class="x">                    &lt;a   href=&quot;</span><span class="cp">&lt;?php</span> <span class="nx">the_permalink</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot; </span>
-<span class="x">                        title=&quot;</span><span class="cp">&lt;?php</span> <span class="nx">the_title_attribute</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot; </span>
-<span class="x">                        rel=&quot;bookmark&quot;&gt;</span>
+<span class="x">                    &lt;a href=&quot;</span><span class="cp">&lt;?php</span> <span class="nx">the_permalink</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot; title=&quot;</span><span class="cp">&lt;?php</span> <span class="nx">the_title_attribute</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x">&quot; rel=&quot;bookmark&quot;&gt;</span>
 <span class="x">                    </span><span class="cp">&lt;?php</span> <span class="nx">the_title</span><span class="p">();</span> <span class="cp">?&gt;</span><span class="x"></span>
 <span class="x">                    &lt;/a&gt;</span>
 <span class="x">                &lt;/li&gt;</span>
