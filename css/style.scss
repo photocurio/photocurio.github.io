@@ -40,8 +40,7 @@ h1, h2, h3 {font-family: 'Old Standard TT', serif; font-weight: 700; }
 
 div.highlight {border-radius: 5px;}
 
-.highlight {font-size: 80%}
-
+code {background-color: #eee; font-size: 90%; line-height: 1.6; padding: 0 2px;}
 pre {padding: 1em;border-radius: 6px;overflow: scroll; }
 
 @import "syntax";

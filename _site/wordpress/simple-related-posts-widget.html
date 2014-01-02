@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">        
+        <!-- header code from alexcican.com -->
+        <title> A Simple Related Posts Widget |  Peter Mumford</title>
+        <meta name="viewport" content="width=device-width">
+		<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet'>
+        <link rel="stylesheet" href="/css/style.css">
+
+    </head>
+    <body>
+    <div id="wrapper" class="clearfix">
+<div class="site clearfix">
+<h1 class="title">A Simple Related Posts Widget</h1>
+<p class="meta">02 Dec 2013</p>
+
+<div class="post">
+<p>If you want to put some related posts in a widget you can use the smart <a href="http://wordpress.org/plugins/yet-another-related-posts-plugin/">YARPP</a> plugin. </p>
+
+<p>Or, if you merely want to list posts with matching tags, you can put a function in your Wordpress theme. In some ways this is better than the fuzzy logic of YARPP because it gives you more control: you just give posts the same tag, and you know they are related. Plus, its easy to edit such simple code to suit (if you know how <a href="http://codex.wordpress.org/The_Loop">the loop</a> works). </p>
+
+<p>Try this to start:</p>
+
+<div class="highlight"><pre><code class="html">// This function will list three posts in the sidebar with like tags.
+// Activated by the shortcode <span class="ni">&amp;#91;</span>related-posts]
+function related_posts_widget() {
+    ob_start();
+    global $post;
+    $tags = wp_get_post_tags( $post-&gt;ID );
+    foreach ( $tags as $tag ) {
+        $tagID[] = $tag-&gt;term_id;
+    }
+    if ($tagID) {
+        $args = array(
+            &#39;tag__in&#39;   =&gt; $tagID,
+            &#39;post__not_in&#39; =&gt; array($post-&gt;ID),
+            &#39;showposts&#39;  =&gt; 3
+        );
+        $related_query = new WP_Query($args);
+        if( $related_query -&gt; have_posts() ) { ?&gt;
+        <span class="ni">&amp;lt;</span>ul&gt;
+        <span class="ni">&amp;lt;</span>?php while ($related_query -&gt; have_posts()) : $related_query -&gt; the_post(); ?&gt;
+        <span class="ni">&amp;lt;</span>li&gt;
+        <span class="ni">&amp;lt;</span>a href=&quot;<span class="cp">&lt;?php the_permalink(); ?&gt;</span>&quot; title=&quot;<span class="ni">&amp;lt;</span>?php the_title_attribute(); ?&gt;&quot; rel=&quot;bookmark&quot;&gt;<span class="ni">&amp;lt;</span>?php the_title(); ?&gt;<span class="ni">&amp;lt;</span>/a&gt;
+        <span class="ni">&amp;lt;</span>/li&gt;
+        <span class="ni">&amp;lt;</span>?php endwhile; ?&gt;
+        <span class="ni">&amp;lt;</span>/ul&gt;
+        <span class="ni">&amp;lt;</span>?php }
+        wp_reset_query();
+    }
+    $output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+}
+add_shortcode(&#39;related-posts&#39;,&#39;related_posts_widget&#39;);<span class="nt">&lt;/pre&gt;</span>
+Also, for this to work you need to be able to put shortcodes in widgets, which does not work with the default WP installation. To enable shortcodes in widgets add this to your functions.php:
+<span class="nt">&lt;pre&gt;</span> add_filter(&#39;widget_text&#39;, &#39;do_shortcode&#39;);
+</code></pre></div>
+
+</div>
+<div id="sidebar">
+  <h3>Blog Posts from Me</h3>
+  <ul>
+  	<li><span><a href="/">Home</a></span></li>
+    
+      <li><span>30 Dec 2013</span> &raquo; <a href="/wordpress/swichable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></li>
+    
+      <li><span>12 Dec 2013</span> &raquo; <a href="/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html">Categories, Tags and Custom Taxonomies for WordPress</a></li>
+    
+      <li><span>02 Dec 2013</span> &raquo; <a href="/wordpress/simple-related-posts-widget.html">A Simple Related Posts Widget</a></li>
+    
+      <li><span>29 May 2013</span> &raquo; <a href="/wordpress/responsive-comment-forms.html">Responsive Comment Forms</a></li>
+    
+  </ul>
+</div>
+
+		<div class="footer">
+            <div class="contact">
+              <p>
+                Peter Mumford<br />
+                Web Developer, WordPress Specialist<br />
+                sunraydust@gmail.com
+              </p>
+            </div>
+			<div class="contact">
+              <p>
+                <a href="https://github.com/photocurio">github.com/photocurio</a><br />
+                <a href="https://twitter.com/photocurio">twitter.com/photocurio</a><br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div><!-- #wrapper -->
+    </body>
+</html>
