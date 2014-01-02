@@ -24,7 +24,7 @@
 *
 */
 
-body {color: #444433;}
+body {color: #444433; background-color: #fefefd;}
 h1, h2, h3 {color: #666655;}
 a {color: #a13300; text-decoration: none;}
 a:hover, a:focus {color: maroon;text-decoration: underline;}
@@ -37,7 +37,8 @@ a:hover, a:focus {color: maroon;text-decoration: underline;}
 body {font-family: Georgia, serif; font-size: 100%;}
 h1, h2, h3, h4, h5, h6 {margin-top: 0;}
 h1, h2, h3 {font-family: 'Old Standard TT', serif; font-weight: 700; }
-.title:first-letter, .title span {margin-right: -3px;}
+.sitename {font-size: 2.2em; margin-bottom: 0.4em;}
+.sitename:first-letter, .sitename span {margin-right: -3px;}
 .subhead {font-size: 1.6em; }
 div.highlight {border-radius: 5px;}
 
@@ -55,8 +56,25 @@ pre {padding: 1em;border-radius: 6px;overflow: scroll; }
 	margin: 20px auto; 
 	max-width: 1000px; 
 	padding: 2em; 
-	box-shadow: 0 0 10px 2px rgba(33,33,33,0.5);
+	box-shadow: 0 0 10px 2px rgba(33,33,33,0.35);
 	border-radius: 5px;
+	background-color: white;
 }
 
-.vard {display: block; text-align: right; float: right; border-top: 1px dashed #774; border-bottom: 1px dashed #774; padding: 0.5em 0.15em;}
+.vcard {
+	display: block; 
+	border-top: 1px dashed #774; 
+	border-bottom: 1px dashed #774; 
+	padding: 0.5em 0.15em;
+}
+.tel, .email {letter-spacing: 1px;}
+
+.post {float: left; margin-right: -250px; width: 100%}
+
+.content {margin-right: 250px;}
+
+#sidebar, .vcard {float: right; width: 220px; }
+
+#sidebar ul {list-style: none; padding: 0;}
+
+#sidebar li {margin-bottom: 1em;}

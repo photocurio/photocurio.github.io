@@ -12,21 +12,24 @@
     </head>
     <body>
     <div id="wrapper" class="clearfix">
-	<div class="header clearfix">
-	<p class="vard">
+
+<div class="header clearfix">
+	<p class="vcard">
 	<span class="fn">Peter Mumford</span><br>
 	<span class="locality">Somerville</span>, <span class="region">MA</span><br>
 	<span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span><br>
 	<span class="tel">781&middot;960&middot;7049</span>
 	</p>
-	<h1 class="title"><a href="/">Peter Mumford&rsquo;s <span>W</span>eb Dev Blog</a></h1>
-	<h3 class="subhead">WordPress Problem Solving <i class='fa fa-umbrella fa-lg'></i></h2>
+	<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog</a></h1>
+	<h3 class="subhead">Problem Solving for Website Owners and Devs <i class='fa fa-umbrella fa-lg'></i></h2>
 </div>        	
-<div class="site clearfix">
-	<h1>Responsive Comment Forms</h1>
-	<p class="meta">29 May 2013</p>
+
+<div class="clearfix">
 	<div class="post">
-	<p>After you make the front page of your theme responsive (see my <a href="href=%22http://topheavypilesofbooks.com/2012/10/coding-a-responsive-site/">previous post</a> ), you need to check the other templates. And one area that might break your theme, and resists the simple CSS-media-queries method, is<strong> the comments form,</strong> typically loaded on the single post template. That&#39;s because forms tend to have fixed widths, and whats more, the width is defined with inline HTML, or at least its defined that way by default in the Wordpress comments template. The template outputs the following HTML for the Name field:</p>
+		<div class="content">
+			<h1>Responsive Comment Forms</h1>
+			<p class="meta">29 May 2013</p>
+			<p>After you make the front page of your theme responsive (see my <a href="href=%22http://topheavypilesofbooks.com/2012/10/coding-a-responsive-site/">previous post</a> ), you need to check the other templates. And one area that might break your theme, and resists the simple CSS-media-queries method, is<strong> the comments form,</strong> typically loaded on the single post template. That&#39;s because forms tend to have fixed widths, and whats more, the width is defined with inline HTML, or at least its defined that way by default in the Wordpress comments template. The template outputs the following HTML for the Name field:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;author&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">size=</span><span class="s">&quot;30&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="na">name=</span><span class="s">&quot;author&quot;</span><span class="nt">&gt;</span>
 </code></pre></div>
@@ -54,11 +57,11 @@
 
 <p>What this code is doing is defining smaller textarea fields if the user agent is &#39;mobile&#39;. See the <code>size=&quot;27&quot;</code> parts? that&#39;s the key. And for the big textarea, I use cols=&quot;28&quot;. These numbers may be &quot;magic numbers&quot;, i.e. they just happen to fit my theme with the font I use, but its no worse than the bad magic numbers that were in there before.</p>
 
+		</div>
 	</div>
 	<div id="sidebar">
-	  <h3>Blog Posts from Me</h3>
+	  <h4>Recent Posts</h4>
 	  <ul>
-	  	<li><span><a href="/">Home</a></span></li>
 	    
 	      <li><span>30 Dec 2013</span> &raquo; <a href="/wordpress/switchable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></li>
 	    
@@ -70,7 +73,7 @@
 	    
 	  </ul>
 	</div>
-
+</div>
 		<div class="footer">
             <div class="contact">
               <p>
@@ -86,7 +89,8 @@
               </p>
             </div>
           </div>
-        </div>
+
+
       </div><!-- #wrapper -->
     </body>
 </html>

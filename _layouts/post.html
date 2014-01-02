@@ -1,21 +1,26 @@
 ---
 ---
 {% include header.html %}
-	{% include hgroup.html %}        	
-<div class="site clearfix">
-	<h1>{{ page.title }}</h1>
-	<p class="meta">{{ page.date | date_to_string }}</p>
+
+{% include hgroup.html %}        	
+
+<div class="clearfix">
 	<div class="post">
-	{{ content }}
+		<div class="content">
+			<h1>{{ page.title }}</h1>
+			<p class="meta">{{ page.date | date_to_string }}</p>
+			{{ content }}
+		</div>
 	</div>
 	<div id="sidebar">
-	  <h3>Blog Posts from Me</h3>
+	  <h4>Recent Posts</h4>
 	  <ul>
-	  	<li><span><a href="/">Home</a></span></li>
 	    {% for post in site.posts %}
 	      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
 	    {% endfor %}
 	  </ul>
 	</div>
+</div>
+{% include footerlinks.html %}
 
 {% include footer.html %}
