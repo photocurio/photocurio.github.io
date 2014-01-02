@@ -17,93 +17,72 @@
 <p class="meta">30 Dec 2013</p>
 
 <div class="post">
-<p>You&#39;ll find this post in your <code>_posts</code> directory - edit this post and re-build (or run with the <code>-w</code> switch) to see your changes!
-To add new posts, simply add a file in the <code>_posts</code> directory that follows the convention: YYYY-MM-DD-name-of-post.ext.</p>
-
-<p>Jekyll also offers powerful support for code snippets:</p>
+<p>If you need a Paypal donation button, and you want the user to be able to select either one-time or recurring donations, its not so simple. These require completely different form submissions to Paypal.  So I wrote this form, and an accompanying jQuery script. It lets the user switch back and forth between one time and recurring donation options.
+Jekyll also offers powerful support for code snippets:</p>
 
 <div class="highlight"><pre><code class="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;donationContainer&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;https://www.paypal.com/cgi-bin/webscr&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">id=</span><span class="s">&quot;recurringHiddenInputs&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;item_name&quot;</span> <span class="na">value=</span><span class="s">&quot;Donation&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;business&quot;</span> <span class="na">value=</span><span class="s">&quot;don@trekkers.org&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;lc&quot;</span> <span class="na">value=</span><span class="s">&quot;US&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;no_shipping&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;currency_code&quot;</span> <span class="na">value=</span><span class="s">&quot;USD&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;return&quot;</span> <span class="na">value=</span><span class="s">&quot;http://trekkers.org/test-donate/&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;p3&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;src&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;no_note&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;bn&quot;</span> <span class="na">value=</span><span class="s">&quot;PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;</span>
-
-            <span class="nt">&lt;table&gt;</span>
-                <span class="nt">&lt;tbody&gt;</span>
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">style=</span><span class="s">&quot;padding: 0 1px;&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;h4&gt;</span>Donate by Paypal<span class="nt">&lt;/h4&gt;</span>
-                        <span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;td&gt;</span>Please select <span class="nt">&lt;span&gt;</span>*<span class="nt">&lt;/span&gt;&lt;/td&gt;</span>
-
-                        <span class="nt">&lt;td&gt;</span>
-                            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio-choice&quot;</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;cmd&quot;</span> <span class="na">value=</span><span class="s">&quot;_xclick-subscriptions&quot;</span> <span class="na">id=</span><span class="s">&quot;severalTimes&quot;</span> <span class="na">checked</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;severalTimes&quot;</span><span class="nt">&gt;</span>Recurring Donation<span class="nt">&lt;/label&gt;</span>
-                            <span class="nt">&lt;/div&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;cmd&quot;</span> <span class="na">value=</span><span class="s">&quot;_donations&quot;</span> <span class="na">id=</span><span class="s">&quot;oneTime&quot;</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;oneTime&quot;</span><span class="nt">&gt;</span>One-time Donation<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;firstcol&quot;</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;amountInput&quot;</span><span class="nt">&gt;</span>Donation amount ($) <span class="nt">&lt;span&gt;</span>*<span class="nt">&lt;/span&gt;&lt;/label&gt;&lt;/td&gt;</span>
-
-                        <span class="nt">&lt;td</span> <span class="na">id=</span><span class="s">&quot;donationAmount&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;a3&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;25&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span> <span class="na">id=</span><span class="s">&quot;amountInput&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-
-                    <span class="nt">&lt;tr</span> <span class="na">id=</span><span class="s">&quot;recurringFrequency&quot;</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;frequency&quot;</span><span class="nt">&gt;</span>Frequency<span class="nt">&lt;/label&gt;&lt;/td&gt;</span>
-
-                        <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;&lt;select</span> <span class="na">name=</span><span class="s">&quot;t3&quot;</span> <span class="na">id=</span><span class="s">&quot;frequency&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;M&quot;</span> <span class="na">selected=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;</span>
-                                Monthly
-                            <span class="nt">&lt;/option&gt;</span>
-
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="nt">&gt;</span>
-                                Yearly
-                            <span class="nt">&lt;/option&gt;</span>
-                        <span class="nt">&lt;/select&gt;&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;on0&quot;</span> <span class="na">value=</span><span class="s">&quot;Program&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;os0&quot;</span><span class="nt">&gt;</span>Gift made to:<span class="nt">&lt;/label&gt;&lt;/td&gt;</span>
-
-                        <span class="nt">&lt;td&gt;&lt;select</span> <span class="na">name=</span><span class="s">&quot;os0&quot;</span> <span class="na">id=</span><span class="s">&quot;os0&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;General Operating Budget&quot;</span><span class="nt">&gt;</span>
-                                General Operating Fund
-                            <span class="nt">&lt;/option&gt;</span>
-
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Scholarship Fund&quot;</span><span class="nt">&gt;</span>
-                                Scholarship Fund
-                            <span class="nt">&lt;/option&gt;</span>
-
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Equipment Fund&quot;</span><span class="nt">&gt;</span>
-                                Equipment Fund
-                            <span class="nt">&lt;/option&gt;</span>
-
-                            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Bus Maintenance&quot;</span><span class="nt">&gt;</span>
-                                Bus Maintenance Fund
-                            <span class="nt">&lt;/option&gt;</span>
-                        <span class="nt">&lt;/select&gt;&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;on1&quot;</span> <span class="na">value=</span><span class="s">&quot;Dedicated to&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;os1&quot;</span><span class="nt">&gt;</span>Donation made<span class="nt">&lt;br&gt;</span>
-                        in honor of:<span class="nt">&lt;/label&gt;&lt;/td&gt;</span>
-
-                        <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">name=</span><span class="s">&quot;os1&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;name&quot;</span> <span class="na">id=</span><span class="s">&quot;os1&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">class=</span><span class="s">&quot;paypal-button&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;image&quot;</span> <span class="na">src=</span><span class="s">&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot;</span> <span class="na">name=</span><span class="s">&quot;submit&quot;</span> <span class="na">alt=</span><span class="s">&quot;PayPal - The safer, easier way to pay online!&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-
-                    <span class="nt">&lt;tr&gt;</span>
-                        <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">class=</span><span class="s">&quot;required&quot;</span><span class="nt">&gt;&lt;span&gt;</span>* required<span class="nt">&lt;/span&gt;&lt;/td&gt;</span>
-                    <span class="nt">&lt;/tr&gt;</span>
-                <span class="nt">&lt;/tbody&gt;</span>
-            <span class="nt">&lt;/table&gt;</span>
-        <span class="nt">&lt;/form&gt;</span>
-    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;https://www.paypal.com/cgi-bin/webscr&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span> <span class="na">id=</span><span class="s">&quot;recurringHiddenInputs&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;item_name&quot;</span> <span class="na">value=</span><span class="s">&quot;Donation&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;business&quot;</span> <span class="na">value=</span><span class="s">&quot;donations@non-profit.org&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;lc&quot;</span> <span class="na">value=</span><span class="s">&quot;US&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;no_shipping&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;currency_code&quot;</span> <span class="na">value=</span><span class="s">&quot;USD&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;return&quot;</span> <span class="na">value=</span><span class="s">&quot;http://your-site.org/thankyou/&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;p3&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;src&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;no_note&quot;</span> <span class="na">value=</span><span class="s">&quot;0&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;bn&quot;</span> <span class="na">value=</span><span class="s">&quot;PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;</span> 
+        <span class="nt">&lt;table&gt;</span>
+            <span class="nt">&lt;tbody&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">style=</span><span class="s">&quot;padding: 0 1px;&quot;</span><span class="nt">&gt;&lt;h4&gt;</span>Donate by Paypal<span class="nt">&lt;/h4&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>Please select <span class="nt">&lt;span&gt;</span>*<span class="nt">&lt;/span&gt;&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio-choice&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;cmd&quot;</span> <span class="na">value=</span><span class="s">&quot;_xclick-subscriptions&quot;</span> <span class="na">id=</span><span class="s">&quot;severalTimes&quot;</span> <span class="na">checked</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;severalTimes&quot;</span><span class="nt">&gt;</span>Recurring Donation<span class="nt">&lt;/label&gt;</span>
+                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;cmd&quot;</span> <span class="na">value=</span><span class="s">&quot;_donations&quot;</span> <span class="na">id=</span><span class="s">&quot;oneTime&quot;</span><span class="nt">&gt;</span>
+                            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;oneTime&quot;</span><span class="nt">&gt;</span>One-time Donation<span class="nt">&lt;/label&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;firstcol&quot;</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;amountInput&quot;</span><span class="nt">&gt;</span>Donation amount ($) <span class="nt">&lt;span&gt;</span>*<span class="nt">&lt;/span&gt;&lt;/label&gt;&lt;/td&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">id=</span><span class="s">&quot;donationAmount&quot;</span><span class="nt">&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;a3&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;25&quot;</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span> <span class="na">id=</span><span class="s">&quot;amountInput&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr</span> <span class="na">id=</span><span class="s">&quot;recurringFrequency&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;frequency&quot;</span><span class="nt">&gt;</span>Frequency<span class="nt">&lt;/label&gt;&lt;/td&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;recurring&quot;</span><span class="nt">&gt;&lt;select</span> <span class="na">name=</span><span class="s">&quot;t3&quot;</span> <span class="na">id=</span><span class="s">&quot;frequency&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;M&quot;</span> <span class="na">selected=</span><span class="s">&quot;selected&quot;</span><span class="nt">&gt;</span>Monthly<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Y&quot;</span><span class="nt">&gt;</span>Yearly<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;/select&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;on0&quot;</span> <span class="na">value=</span><span class="s">&quot;Program&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;os0&quot;</span><span class="nt">&gt;</span>Gift made to:<span class="nt">&lt;/label&gt;&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;&lt;select</span> <span class="na">name=</span><span class="s">&quot;os0&quot;</span> <span class="na">id=</span><span class="s">&quot;os0&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;General Operating Budget&quot;</span><span class="nt">&gt;</span>General Operating Fund<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Scholarship Fund&quot;</span><span class="nt">&gt;</span>Scholarship Fund<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Equipment Fund&quot;</span><span class="nt">&gt;</span>Equipment Fund<span class="nt">&lt;/option&gt;</span>
+                        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;Bus Maintenance&quot;</span><span class="nt">&gt;</span>Bus Maintenance Fund<span class="nt">&lt;/option&gt;</span>
+                    <span class="nt">&lt;/select&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;on1&quot;</span> <span class="na">value=</span><span class="s">&quot;Dedicated to&quot;</span><span class="nt">&gt;</span> <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;os1&quot;</span><span class="nt">&gt;</span>Donation made<span class="nt">&lt;br&gt;</span>in honor of:<span class="nt">&lt;/label&gt;&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;&lt;input</span> <span class="na">name=</span><span class="s">&quot;os1&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;name&quot;</span> <span class="na">id=</span><span class="s">&quot;os1&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">class=</span><span class="s">&quot;paypal-button&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;image&quot;</span> <span class="na">src=</span><span class="s">&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif&quot;</span> <span class="na">name=</span><span class="s">&quot;submit&quot;</span> <span class="na">alt=</span><span class="s">&quot;Donate by PayPal&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">class=</span><span class="s">&quot;required&quot;</span><span class="nt">&gt;&lt;span&gt;</span>* required<span class="nt">&lt;/span&gt;&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+            <span class="nt">&lt;/tbody&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
 </code></pre></div>
 
 <p>It requires this bit of jQuery to switch the forms:</p>
@@ -118,15 +97,19 @@ To add new posts, simply add a file in the <code>_posts</code> directory that fo
     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input[id=&#39;severalTimes&#39;]&quot;</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s1">&#39;:checked&#39;</span><span class="p">))</span> <span class="p">{</span>
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.oneTime&#39;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#recurringFrequency&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td class=&quot;recurring&quot;&gt;&lt;label for=&quot;frequency&quot;&gt;Frequency&lt;/label&gt;&lt;/td&gt;&lt;td class=&quot;recurring&quot;&gt;&lt;select name=&quot;t3&quot; id=&quot;frequency&quot;&gt;&lt;option value=&quot;M&quot; selected=&quot;selected&quot;&gt;Monthly&lt;/option&gt;&lt;option value=&quot;Y&quot;&gt;Yearly&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;&#39;</span><span class="p">);</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#recurringHiddenInputs&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39; &lt;input type=&quot;hidden&quot; name=&quot;p3&quot; value=&quot;1&quot; class=&quot;recurring&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;src&quot; value=&quot;1&quot; class=&quot;recurring&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;no_note&quot; value=&quot;0&quot; class=&quot;recurring&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;bn&quot; value=&quot;PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest&quot; class=&quot;recurring&quot;&gt; &#39;</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#recurringFrequency&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td class=&quot;recurring&quot;&gt;&lt;label for=&quot;frequency&quot;&gt;Frequency&lt;/label&gt;&lt;/td&gt;</span>
+<span class="s1">               &lt;td class=&quot;recurring&quot;&gt;&lt;select name=&quot;t3&quot; id=&quot;frequency&quot;&gt; </span>
+<span class="s1">               &lt;option value=&quot;M&quot; selected=&quot;selected&quot;&gt;Monthly&lt;/option&gt; </span>
+<span class="s1">               &lt;option value=&quot;Y&quot;&gt;Yearly&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;&#39;</span><span class="p">);</span>
+            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#recurringHiddenInputs&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39; &lt;input type=&quot;hidden&quot; name=&quot;p3&quot; value=&quot;1&quot; class=&quot;recurring&quot;&gt; </span>
+<span class="s1">               &lt;input type=&quot;hidden&quot; name=&quot;src&quot; value=&quot;1&quot; class=&quot;recurring&quot;&gt; </span>
+<span class="s1">               &lt;input type=&quot;hidden&quot; name=&quot;no_note&quot; value=&quot;0&quot; class=&quot;recurring&quot;&gt; </span>
+<span class="s1">               &lt;input type=&quot;hidden&quot; name=&quot;bn&quot; value=&quot;PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest&quot; class=&quot;recurring&quot;&gt; &#39;</span><span class="p">);</span>
             <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#donationAmount&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;input type=&quot;text&quot; name=&quot;a3&quot; placeholder=&quot;25&quot; class=&quot;recurring&quot;&gt;&#39;</span><span class="p">);</span>
         <span class="p">}</span>
     <span class="p">})</span>
 <span class="p">});</span>
 </code></pre></div>
-
-<p>Check out the <a href="http://jekyllrb.com">Jekyll docs</a> for more info on how to get the most out of Jekyll. File all bugs/feature requests at <a href="https://github.com/mojombo/jekyll">Jekyll&#39;s GitHub repo</a>.</p>
 
 </div>
 <div id="sidebar">

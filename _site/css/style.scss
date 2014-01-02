@@ -6,7 +6,7 @@
 *
 */
 
-@import "bp_reset";
+@import "normalize";
 @import "bp_typography";
 
 /*! 
@@ -35,14 +35,14 @@ a:hover, a:focus {color: maroon;text-decoration: underline;}
 *
 */
 body {font-family: Georgia, serif; font-size: 100%;}
-
+h1, h2, h3, h4, h5, h6 {margin-top: 0;}
 h1, h2, h3 {font-family: 'Old Standard TT', serif; font-weight: 700; }
 
 div.highlight {border-radius: 5px;}
 
 .highlight {font-size: 80%}
 
-pre {padding: 2em;border-radius: 6px;}
+pre {padding: 1em;border-radius: 6px;overflow: scroll; }
 
 @import "syntax";
 
@@ -51,4 +51,4 @@ pre {padding: 2em;border-radius: 6px;}
 * 	layout 
 *
 */
-#wrapper {margin: 2em auto; max-width: 1000px; padding: 2em;}
+#wrapper {margin: 0 auto; max-width: 1000px; padding: 2em;}
