@@ -3,4 +3,4 @@ subhead: "Problem Solving for Website Owners and Devs <i class='fa fa-umbrella f
 markdown: redcarpet
 url: "http://petermumford.net"
 permalink: "/:categories/:title.html"
-
+paginate: 6

@@ -5,9 +5,9 @@ date:   2013-12-2
 categories: wordpress
 ---
 
-If you want to put some related posts in a widget you can use the smart <a href="http://wordpress.org/plugins/yet-another-related-posts-plugin/">YARPP</a> plugin. 
+If you want to put some related posts in a widget you can use the smart <a href="http://wordpress.org/plugins/yet-another-related-posts-plugin/">YARPP</a> plugin. Or, if you merely want to list posts with matching tags, you can put a function in your Wordpress theme, or make your own plugin. 
 
-Or, if you merely want to list posts with matching tags, you can put a function in your Wordpress theme, or make your own plugin. In some ways this is better than the fuzzy logic of YARPP because it gives you more control: you just give posts the same tag, and you know they are related. Plus, its easy to edit such simple code to suit (if you know how <a href="http://codex.wordpress.org/The_Loop">the loop</a> works). 
+In some ways this is better than the fuzzy logic of YARPP because it gives you more control: you just give posts the same tag, and you know they are related. Plus, its easy to edit such simple code to suit (if you know how <a href="http://codex.wordpress.org/The_Loop">the loop</a> works). 
 
 Try this function to start:
 {% highlight php %}
