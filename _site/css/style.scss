@@ -100,7 +100,7 @@ p.author {margin-bottom: .5em;}
 
 @media screen and (max-width: 800px) {
 	#home .post {width: auto;float: none; height: auto;}
-	
+	#wrapper {margin: 0; border-radius: 0; box-shadow: 0; }
 	.post {float: none; margin-right: 0; width: auto;}
 	.content {margin-right: 0;}
 	.sitename, .slogan {margin-right: 0;}
