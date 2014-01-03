@@ -1,5 +1,5 @@
-name: "Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog"
-subhead: "Problem Solving for Website Owners and Designers <i class='fa fa-umbrella fa-lg'></i>"
+sitename: "Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog"
+slogan: "Problem Solving for Website Owners and Designers <i class='fa fa-umbrella fa-lg'></i>"
 markdown: redcarpet
 url: "http://petermumford.net"
 permalink: "/:categories/:title.html"

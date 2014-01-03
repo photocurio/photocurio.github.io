@@ -35,15 +35,27 @@ a:hover, a:focus {color: maroon;text-decoration: underline;}
 *
 */
 body {font-family: Georgia, serif; font-size: 100%;}
+
 h1, h2, h3, h4, h5, h6 {margin-top: 0;}
-h1, h2, h3 {font-family: 'Old Standard TT', serif; font-weight: 700; }
-.sitename {font-size: 2.2em; margin-bottom: 0.4em;}
+
+h1, h2, h3 {font-family: 'Old Standard TT', serif; }
+
+.sitename, .slogan {margin-right: 250px;}
+
+.hgroup {margin-right: -250px;float: left; width: 100%;}
+
+.sitename {font-size: 2.2em; margin-bottom: 0.4em;font-weight: 700;}
+
 .sitename:first-letter, .sitename span {margin-right: -3px;}
-.subhead {font-size: 1.55em; font-weight: 400; font-style: italic;}
+
+.slogan {font-size: 1.55em; font-weight: 400; font-style: italic;}
+
 .posttitle {letter-spacing: -2px; font-weight: 400; font-size: 3.2em;}
+
 div.highlight {border-radius: 5px;}
 
 code {background-color: #eee; font-size: 90%; line-height: 1.6; padding: 0 2px;}
+
 pre {padding: 1em;border-radius: 6px;overflow: scroll; }
 
 @import "syntax";
@@ -85,3 +97,13 @@ pre {padding: 1em;border-radius: 6px;overflow: scroll; }
 .excerpt-title {margin-bottom: 0.25em;}
 
 p.author {margin-bottom: .5em;}
+
+@media screen and (max-width: 800px) {
+	#home .post {width: auto;float: none; height: auto;}
+	
+	.post {float: none; margin-right: 0; width: auto;}
+	.content {margin-right: 0;}
+	.sitename, .slogan {margin-right: 0;}
+	.hgroup {margin-right: 0;float: none; width: auto;}
+	#sidebar, .vcard {float: none; width: auto; }
+}
