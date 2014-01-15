@@ -10,7 +10,7 @@ So I wrote this form, and an accompanying jQuery script. It lets the user switch
 
 If this is installed on a WordPress or other CMS site, it is better set up as a plugin. A site owner does not need to lose all functionality just because he/she switches themes.
 
-<code>
+{% highlight html %}
 <div class="donationContainer">
     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="recurringHiddenInputs"> 
         <input type="hidden" name="item_name" value="Donation"> 
@@ -74,9 +74,9 @@ If this is installed on a WordPress or other CMS site, it is better set up as a 
         </table>
     </form>
 </div>
-</code>
+{% endhighlight %}
 It requires this bit of jQuery to switch the forms:
-<code>
+{% highlight js %}
 jQuery(document).ready(function($) {
 	$("input[id='oneTime']").change(function() {
 		if ($(this).is(':checked')) { 
@@ -99,5 +99,5 @@ jQuery(document).ready(function($) {
 		}
 	})
 });
-</code>
+{% endhighlight %}
 
