@@ -5,18 +5,10 @@
 * 	normalize
 *
 */
-
-@import "normalize";
-@import "bp_typography";
-
-/*! 
-* 	clearfix 
-*/
-.clearfix:after {
-	content: '';
-	display: table;
-	clear: both;
-}
+@import "pm-box-sizing";
+@import "bp-reset";
+@import "bp-typography";
+@import "pm-clearfix";
 
 /*!
 *
