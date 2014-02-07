@@ -70,8 +70,11 @@ pre {padding: 1em;border-radius: 6px;overflow: scroll; }
 	border-top: 1px dashed #774; 
 	border-bottom: 1px dashed #774; 
 	padding: 0.5em 0.15em;
+	margin: 0;
 }
 .tel, .email {letter-spacing: 1px;}
+
+.header {margin-bottom: 50px;}
 
 .post {float: left; margin-right: -250px; width: 100%}
 
