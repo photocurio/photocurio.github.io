@@ -1,5 +1,3 @@
-* {box-sizing: border-box; -webkit-backface-visibility: hidden;}
-
 /*! 
 *
 * 	normalize
@@ -16,9 +14,9 @@
 *
 */
 
-body {color: #444433; background: #c6cabb url('/background-weave.png') repeat;}
+body {color: #443; background: #e2e4de url(../images/weave.gif) repeat fixed top left; }
 
-h1, h2, h3 {color: #666655;}
+h1, h2, h3 {color: #665;}
 
 a {color: #a13300; text-decoration: none;-webkit-transition: all 0.5s ease;-moz-transition: all 0.5s ease;-o-transition: all 0.5s ease; transition: all 0.5s ease; 
 }
