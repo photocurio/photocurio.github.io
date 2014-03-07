@@ -5,9 +5,9 @@ date:   2013-05-29
 categories: wordpress
 ---
 
-After you make the front page of your theme responsive (see my [previous post](href="http://topheavypilesofbooks.com/2012/10/coding-a-responsive-site/) ), you need to check the other templates. And one area that might break your theme, and resists the simple CSS-media-queries method, is<strong> the comments form,</strong> typically loaded on the single post template. 
+After you make the front page of your theme responsive (see my [previous post](href="http://topheavypilesofbooks.com/2012/10/coding-a-responsive-site/)), you need to check the other templates. And one area that might break your theme, and resists the simple CSS-media-queries method, is <strong>the comments form</strong>, typically loaded on the single post template. 
 
-That's because forms tend to have fixed widths, and whats more, the width is defined with inline HTML, or at least its defined that way by default in the Wordpress comments template. The template outputs the following HTML for the Name field:
+That's because forms tend to have fixed widths, and whats more, the width is defined by with inline HTML, or at least its defined that way by default in the Wordpress comments template. The template outputs the following HTML for the Name field:
 {% highlight html %}
 <input id="author" type="text" aria-required="true" size="30" value="" name="author">
 {% endhighlight %}
