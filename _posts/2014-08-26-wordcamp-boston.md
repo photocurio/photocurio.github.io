@@ -4,7 +4,7 @@ title:  "WordCamp Boston"
 date:   2014-08-26
 categories: WordPress JavaScript
 ---
-I went to [WordCamp Boston](http://2014.boston.wordcamp.org/) last weekend. It was basically one-day of presentations, so it was a small WordCamp. My take-away was very different from what I expected.
+I went to [WordCamp Boston](http://2014.boston.wordcamp.org/) last weekend. It was basically one-day of presentations, so it was a small WordCamp. My take-away was very different from what I expected: the future of WordPress (and of the web) is javascript. 
 
 The second presentation I attended was on the history of APIs, and the last part of the talk devoted to a new [JSON API](http://wordpress.org/plugins/json-rest-api/) for WordPress. This is available now as a plugin, but is scheduled for intergration into the WP core in version 4.2. The whole thing was an eye-opener for me, since I had not considered what the implications could be of millions of WordPress sites around the globe suddenly being able to communicate with each other. I was left baffled, and musing "What can I do with this new thing?"
 
