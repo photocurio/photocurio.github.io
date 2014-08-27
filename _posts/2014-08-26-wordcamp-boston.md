@@ -2,7 +2,7 @@
 layout: post
 title:  "WordCamp Boston"
 date:   2014-08-26
-categories: WordPress, JavaScript
+categories: WordPress JavaScript
 ---
 I went to [WordCamp Boston](http://2014.boston.wordcamp.org/) last weekend. It was basically one-day of presentations, so it was a small WordCamp. My take-away was very different from what I expected.
 
