@@ -488,6 +488,10 @@ header.hgroup, .post {
 }
 #sidebar li {
 	margin-bottom: 0.5em;
+	text-transform: capitalize;
+}
+#sidebar li a:hover {
+	text-decoration: underline;
 }
 #sidebar ul {
 	margin-top: 0.5em
