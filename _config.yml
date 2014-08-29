@@ -1,6 +1,7 @@
 sitename: "Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog"
-slogan: "Problem Solving for Website Owners and Designers&nbsp; <i class='fa fa-umbrella fa-lg'></i>"
+slogan: "Problem Solving for Website Owners and Designers"
+intro: "&mdash;by a guy who loves WordPress. And I also love <a href='http://jekyllrb.com/'>Jekyll</a>.  This blog is made with Jekyll, and hosted at my <a href='https://github.com/photocurio/'>Git</a> account."
 markdown: redcarpet
 url: "http://petermumford.net"
 permalink: "/:categories/:title.html"
-paginate: 6
+paginate: 9

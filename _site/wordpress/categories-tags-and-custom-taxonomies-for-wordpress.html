@@ -11,28 +11,31 @@
         <link rel="stylesheet" href="/css/style.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="icon" href="/favicon.png">
+        <script src="/javascript/masonry.pkgd.min.js"></script>
     </head>
     <body>
-    <div id="wrapper" class="clearfix">
+    <div id="wrapper" class="container clearfix">
 
-<div class="header clearfix">
-	<div class="hgroup">
+<header class="hgroup content">
+	<div class="hgroup col8">
 		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog</a></h1>
-		<h3 class="slogan">Problem Solving for Website Owners and Designers&nbsp; <i class='fa fa-umbrella fa-lg'></i></h2>
+		<h3 class="slogan">Problem Solving for Website Owners and Designers</h2>
+		<p class="intro">&mdash;by a guy who loves WordPress. And I also love <a href='http://jekyllrb.com/'>Jekyll</a>.  This blog is made with Jekyll, and hosted at my <a href='https://github.com/photocurio/'>Git</a>.</p>
 	</div>
-	<p class="vcard">
-		<span class="fn">Peter Mumford</span><br>
-		<span class="locality">Somerville</span>, <span class="region">MA</span><br>
-		<span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span><br>
-		<span class="tel">781&middot;960&middot;7049</span>
-	</p>
-</div>        	
+	<div class="col4">
+		<p class="vcard">I live in <span class="locality">Somerville</span>, <span class="region">MA</span>.</p>
+		<p>I like to sail and row boats, play chess, brew beer and read novels.</p>
+		<p class="vcard"><em>tweet:</em> <span class="twitter"><a href="https://twitter.com/photocurio">@photocurio</a></span><br>
+		<em>email:</em> <span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span><br>
+		<em>cell:</em> <span class="tel">781&middot;960&middot;7049</span></p>
+	</div>
+</header>        	
 
 <div class="single clearfix">
 	<div class="post">
 		<div class="content">
 			<h1 class="posttitle">Categories, Tags and Custom Taxonomies for WordPress</h1>
-			<p class="meta">12 Dec 2013</p>
+			<p class="meta">December 12, 2013</p>
 			<p>Wordpress comes with 2 taxonomies built in: Categories and Tags, but you can add <em>Custom Taxonomies</em> if you like.  I was building WP sites for three years before I needed to set up a custom taxonomy for a client. </p>
 
 <p>There is a lot you can do with Categories and Tags. I&#39;ve always told my clients &quot;use as few categories as you need to organize your site, and as many tags as you like&quot;. That sums it up.  Categories are to divide your content into sections, tags are open ended, and can be used to add keywords to your posts.</p>
@@ -50,7 +53,7 @@
 		</div>
 	</div>
 	<div id="sidebar">
-	  <h4>Recent Posts</h4>
+	  <h4>Some Recent Posts</h4>
 	  <ul>
 	    
 	      <li><a href="/wordpress/javascript/wordcamp-boston.html">WordCamp Boston</a></li>
@@ -70,17 +73,8 @@
 	  </ul>
 	</div>
 </div>
-		<div class="footer">
-			<div class="contact">
-          <p>Peter Mumford<br>
-          <a href="https://github.com/photocurio">github.com/photocurio</a><br>
-          <a href="https://twitter.com/photocurio">twitter.com/photocurio</a><br>
-          </p>
-      </div>
-    </div>
 
-
-      </div><!-- #wrapper -->
+      </div><!-- #wrapper, .container -->
       <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -88,6 +82,12 @@
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-46816784-1');ga('send','pageview');
+        </script>
+        <script> 
+	        //var container = document.querySelector('#wall');
+			//var msnry = new Masonry( container, {
+			//itemSelector: '.brick'
+			//});
         </script>
     </body>
 </html>

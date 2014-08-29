@@ -47,6 +47,7 @@ a:visited { color: #a0a; }
 /* Home
 /*
 /*****************************************************************************/
+
 .posts {
   list-style-type: none;
   margin-bottom: 2em;
@@ -177,6 +178,7 @@ div.post {float: left;margin-right: 320px;}
 /* Sidebar
 /*
 /*****************************************************************************/
+
 div#sidebar {float: right;width: 300px;}
 
 #sidebar {font-size: 80%;}
@@ -189,6 +191,7 @@ div#sidebar {float: right;width: 300px;}
 /* Syntax Highlighter
 /*
 /*****************************************************************************/
+
 .highlight  { background: #ffffff; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */

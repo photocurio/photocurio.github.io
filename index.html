@@ -3,24 +3,22 @@ layout: default
 title: My Blog
 subtitle: WordPress and Jekyll web development
 ---
-<div id="home" class="clearfix">
 
 <!-- This loops through the paginated posts -->
 	{% for post in paginator.posts %}
-	<div class="post">
+	<div class="post col4 brick">
 		<h3 class="excerpt-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
 		<p class="author">
-		<span class="date">{{ post.date | date_to_string }}</span>
+		<span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
 		</p>
 		<div class="excerpt">
 		{{ post.excerpt }}
 		</div>
 	</div>
 	{% endfor %}
-</div>
 
 <!-- Pagination links -->
-<div class="pagination">
+<div class="pagination col12 brick" style="margin-left:0;">
 	{% if paginator.previous_page %}
 	<a href="/page{{ paginator.previous_page }}" class="previous">Previous</a>
 	{% else %}

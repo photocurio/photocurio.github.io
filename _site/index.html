@@ -11,32 +11,31 @@
         <link rel="stylesheet" href="/css/style.css">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="icon" href="/favicon.png">
+        <script src="/javascript/masonry.pkgd.min.js"></script>
     </head>
     <body>
-    <div id="wrapper" class="clearfix">
-	<div class="site">
-		<div class="header clearfix">
-	<div class="hgroup">
+    <div id="wrapper" class="container clearfix">
+		<header class="hgroup content">
+	<div class="hgroup col8">
 		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog</a></h1>
-		<h3 class="slogan">Problem Solving for Website Owners and Designers&nbsp; <i class='fa fa-umbrella fa-lg'></i></h2>
+		<h3 class="slogan">Problem Solving for Website Owners and Designers</h2>
+		<p class="intro">&mdash;by a guy who loves WordPress. And I also love <a href='http://jekyllrb.com/'>Jekyll</a>.  This blog is made with Jekyll, and hosted at my <a href='https://github.com/photocurio/'>Git</a>.</p>
 	</div>
-	<p class="vcard">
-		<span class="fn">Peter Mumford</span><br>
-		<span class="locality">Somerville</span>, <span class="region">MA</span><br>
-		<span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span><br>
-		<span class="tel">781&middot;960&middot;7049</span>
-	</p>
-</div>        	
-        <div class="container">
-          
-          <div id="home" class="clearfix">
-
-<!-- This loops through the paginated posts -->
+	<div class="col4">
+		<p class="vcard">I live in <span class="locality">Somerville</span>, <span class="region">MA</span>.</p>
+		<p>I like to sail and row boats, play chess, brew beer and read novels.</p>
+		<p class="vcard"><em>tweet:</em> <span class="twitter"><a href="https://twitter.com/photocurio">@photocurio</a></span><br>
+		<em>email:</em> <span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span><br>
+		<em>cell:</em> <span class="tel">781&middot;960&middot;7049</span></p>
+	</div>
+</header>        	
+        	<div id="wall" class="content clearfix">
+        		<!-- This loops through the paginated posts -->
 	
-	<div class="post">
+	<div class="post col4 brick">
 		<h3 class="excerpt-title"><a href="/wordpress/javascript/wordcamp-boston.html">WordCamp Boston</a></h3>
 		<p class="author">
-		<span class="date">26 Aug 2014</span>
+		<span class="date">August 26, 2014</span>
 		</p>
 		<div class="excerpt">
 		<p>I went to <a href="http://2014.boston.wordcamp.org/">WordCamp Boston</a> last weekend. It was basically one-day of presentations, so it was a small WordCamp. My take-away was very different from what I expected: the future of WordPress (and of the web) is javascript. </p>
@@ -44,10 +43,10 @@
 		</div>
 	</div>
 	
-	<div class="post">
+	<div class="post col4 brick">
 		<h3 class="excerpt-title"><a href="/wordpress/pagination-for-the-magazine-theme.html">Pagination for the Magazine Theme</a></h3>
 		<p class="author">
-		<span class="date">07 Feb 2014</span>
+		<span class="date">February 7, 2014</span>
 		</p>
 		<div class="excerpt">
 		<p>So, you have a magazine-style WordPress theme with a slider that loads three posts before the default loop. The issue of pagination come up when the user hits the Older Posts link.</p>
@@ -55,10 +54,10 @@
 		</div>
 	</div>
 	
-	<div class="post">
+	<div class="post col4 brick">
 		<h3 class="excerpt-title"><a href="/css3/soft-links.html">Soft link effects</a></h3>
 		<p class="author">
-		<span class="date">31 Jan 2014</span>
+		<span class="date">January 31, 2014</span>
 		</p>
 		<div class="excerpt">
 		<p>This is a simple way to make a site more like a smooth web-app: give a half-second transition property to all links.</p>
@@ -66,10 +65,10 @@
 		</div>
 	</div>
 	
-	<div class="post">
+	<div class="post col4 brick">
 		<h3 class="excerpt-title"><a href="/wordpress/switchable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></h3>
 		<p class="author">
-		<span class="date">30 Dec 2013</span>
+		<span class="date">December 30, 2013</span>
 		</p>
 		<div class="excerpt">
 		<p>If you need a Paypal donation button, and you want the user to be able to select either one-time or recurring donations, its not so simple. These require completely different form submissions to Paypal.  </p>
@@ -77,10 +76,10 @@
 		</div>
 	</div>
 	
-	<div class="post">
+	<div class="post col4 brick">
 		<h3 class="excerpt-title"><a href="/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html">Categories, Tags and Custom Taxonomies for WordPress</a></h3>
 		<p class="author">
-		<span class="date">12 Dec 2013</span>
+		<span class="date">December 12, 2013</span>
 		</p>
 		<div class="excerpt">
 		<p>Wordpress comes with 2 taxonomies built in: Categories and Tags, but you can add <em>Custom Taxonomies</em> if you like.  I was building WP sites for three years before I needed to set up a custom taxonomy for a client. </p>
@@ -88,10 +87,10 @@
 		</div>
 	</div>
 	
-	<div class="post">
+	<div class="post col4 brick">
 		<h3 class="excerpt-title"><a href="/wordpress/simple-related-posts-widget.html">A Simple Related Posts Widget</a></h3>
 		<p class="author">
-		<span class="date">02 Dec 2013</span>
+		<span class="date">December 2, 2013</span>
 		</p>
 		<div class="excerpt">
 		<p>If you want to put some related posts in a widget you can use the smart <a href="http://wordpress.org/plugins/yet-another-related-posts-plugin/">YARPP</a> plugin. Or, if you merely want to list posts with matching tags, you can put a function in your Wordpress theme, or make your own plugin. </p>
@@ -99,30 +98,30 @@
 		</div>
 	</div>
 	
-</div>
+	<div class="post col4 brick">
+		<h3 class="excerpt-title"><a href="/wordpress/responsive-comment-forms.html">Responsive Comment Forms</a></h3>
+		<p class="author">
+		<span class="date">May 29, 2013</span>
+		</p>
+		<div class="excerpt">
+		<p>After you make the front page of your theme responsive (see my <a href="href=%22http://topheavypilesofbooks.com/2012/10/coding-a-responsive-site/">previous post</a>), you need to check the other templates. And one area that might break your theme, and resists the simple CSS-media-queries method, is <strong>the comments form</strong>, typically loaded on the single post template. </p>
+
+		</div>
+	</div>
+	
 
 <!-- Pagination links -->
-<div class="pagination">
+<div class="pagination col12 brick" style="margin-left:0;">
 	
 	<span class="previous">Previous</span>
 	
-	<span class="page_number ">Page: 1 of 2</span>
+	<span class="page_number ">Page: 1 of 1</span>
 	
-	<a href="/page2" class="next">Next</a>
+	<span class="next ">Next</span>
 	
 </div>
-		</div>
-		<div class="footer">
-			<div class="contact">
-          <p>Peter Mumford<br>
-          <a href="https://github.com/photocurio">github.com/photocurio</a><br>
-          <a href="https://twitter.com/photocurio">twitter.com/photocurio</a><br>
-          </p>
-      </div>
-    </div>
-
-	</div>
-      </div><!-- #wrapper -->
+      		</div>	
+      </div><!-- #wrapper, .container -->
       <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -130,6 +129,12 @@
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-46816784-1');ga('send','pageview');
+        </script>
+        <script> 
+	        //var container = document.querySelector('#wall');
+			//var msnry = new Masonry( container, {
+			//itemSelector: '.brick'
+			//});
         </script>
     </body>
 </html>
