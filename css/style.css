@@ -442,7 +442,7 @@ h1,h2,h3 {
 .posttitle {
 	letter-spacing:-2px;
 	font-weight:bold;
-	font-size:3.2em;
+	font-size:3em;
 	line-height: 1;
 	margin-bottom: 0.4em;
 }
@@ -483,7 +483,15 @@ header.hgroup, .post {
 	padding-bottom: 1em;
 	margin-bottom: 2.5em;	
 }
-
+.widgettitle {
+	font-size: 1.5em;
+}
+#sidebar li {
+	margin-bottom: 0.5em;
+}
+#sidebar ul {
+	margin-top: 0.5em
+}
 /* Custom sizes
 ============================================================================================== */
 /* Helpers for windows phone 8 */
