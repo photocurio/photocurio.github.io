@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <meta name="google-site-verification" content="ZoygUPr5O7P8MU5iG3kSqFgIjyM_HNXF8pC14GSGfiI"> 
-        <!-- header code from alexcican.com -->
+		<meta name="google-site-verification" content="ZoygUPr5O7P8MU5iG3kSqFgIjyM_HNXF8pC14GSGfiI" />        
+		<!-- header code from alexcican.com -->
         <title> A Simple Related Posts Widget |  Peter Mumford</title>
         <meta name="viewport" content="width=device-width">
 		<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet'>
@@ -39,7 +39,7 @@
 
 <p>Try this function to start:</p>
 
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="c1">// This function will list three posts in the sidebar with like tags.</span>
 <span class="c1">// Activated by the shortcode [related-posts]</span>
 <span class="k">function</span> <span class="nf">related_posts_widget</span><span class="p">()</span> <span class="p">{</span>
@@ -74,8 +74,7 @@
     <span class="k">return</span> <span class="nv">$output</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nx">add_shortcode</span><span class="p">(</span><span class="s1">&#39;related-posts&#39;</span><span class="p">,</span><span class="s1">&#39;related_posts_widget&#39;</span><span class="p">);</span>
-<span class="cp">?&gt;</span><span class="x"></span>
-</code></pre></div>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
 
 <p>Also, for this to work you need to be able to put shortcodes in widgets, which does not work with the default WP installation. To enable shortcodes in widgets add this to your functions.php:
 <code>add_filter(&#39;widget_text&#39;, &#39;do_shortcode&#39;);</code></p>
@@ -85,6 +84,8 @@
 	<div id="sidebar">
 	  <h4>Recent Posts</h4>
 	  <ul>
+	    
+	      <li><a href="/wordpress/javascript/wordcamp-boston.html">WordCamp Boston</a></li>
 	    
 	      <li><a href="/wordpress/pagination-for-the-magazine-theme.html">Pagination for the Magazine Theme</a></li>
 	    
@@ -102,20 +103,13 @@
 	</div>
 </div>
 		<div class="footer">
-            <div class="contact">
-              <p>
-                Peter Mumford<br />
-                Web Developer, WordPress Specialist<br />
-                sunraydust@gmail.com
-              </p>
-            </div>
 			<div class="contact">
-              <p>
-                <a href="https://github.com/photocurio">github.com/photocurio</a><br />
-                <a href="https://twitter.com/photocurio">twitter.com/photocurio</a><br />
-              </p>
-            </div>
-          </div>
+          <p>Peter Mumford<br>
+          <a href="https://github.com/photocurio">github.com/photocurio</a><br>
+          <a href="https://twitter.com/photocurio">twitter.com/photocurio</a><br>
+          </p>
+      </div>
+    </div>
 
 
       </div><!-- #wrapper -->
