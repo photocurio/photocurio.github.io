@@ -5,3 +5,8 @@ markdown: redcarpet
 url: "http://petermumford.net"
 permalink: "/:categories/:title.html"
 paginate: 9
+
+# for RSS feed generator
+name: "Peter Mumford's WordPress Dev Blog"  
+description: "Problem Solving for Website Owners and Designers"
+author: "Peter Mumford"
