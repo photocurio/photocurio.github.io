@@ -331,15 +331,10 @@ a:focus {
 }
 
 
-
-
-
-
-
 /* PETER'S STYLES */
 body {
 	color:#443;
-	background:#e2e4de url(../images/weave.gif) repeat fixed top left;
+	background:#e2e4de url(weave.gif) repeat fixed top left;
 }
 h1,h2,h3 {
 	color:#665;
