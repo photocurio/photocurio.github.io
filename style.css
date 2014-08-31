@@ -367,6 +367,7 @@ a:hover,a:focus {
 	font-size:60%;
 	position:absolute;
 	left:-18px;
+	font-weight: normal;
 	top:6px;
 }
 
