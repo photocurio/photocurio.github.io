@@ -30,7 +30,7 @@
         	<div id="wall" class="content clearfix">
         		<!-- This loops through the paginated posts -->
 	
-	<div class="post col4 brick">
+	<div class="post brick">
 		<h3 class="excerpt-title"><a href="/wordpress/advanced-custom-fields.html">Through the Custom Fields, Iterating Along</a></h3>
 		<p class="author">
 		<span class="date">December 17, 2014</span>
@@ -42,7 +42,7 @@
 		</div>
 	</div>
 	
-	<div class="post col4 brick">
+	<div class="post brick">
 		<h3 class="excerpt-title"><a href="/wordpress/javascript/wordcamp-boston.html">WordCamp Boston</a></h3>
 		<p class="author">
 		<span class="date">August 26, 2014</span>
@@ -54,7 +54,7 @@
 		</div>
 	</div>
 	
-	<div class="post col4 brick">
+	<div class="post brick">
 		<h3 class="excerpt-title"><a href="/wordpress/pagination-for-the-magazine-theme.html">Pagination for the Magazine Theme</a></h3>
 		<p class="author">
 		<span class="date">February 7, 2014</span>
@@ -66,7 +66,7 @@
 		</div>
 	</div>
 	
-	<div class="post col4 brick">
+	<div class="post brick">
 		<h3 class="excerpt-title"><a href="/css3/soft-links.html">Soft link effects</a></h3>
 		<p class="author">
 		<span class="date">January 31, 2014</span>
@@ -78,7 +78,7 @@
 		</div>
 	</div>
 	
-	<div class="post col4 brick">
+	<div class="post brick">
 		<h3 class="excerpt-title"><a href="/wordpress/switchable-one-time-or-recurring-paypal-donation-button.html">Switchable One-Time or Recurring Paypal Donation Button</a></h3>
 		<p class="author">
 		<span class="date">December 30, 2013</span>
@@ -90,7 +90,7 @@
 		</div>
 	</div>
 	
-	<div class="post col4 brick">
+	<div class="post brick">
 		<h3 class="excerpt-title"><a href="/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html">Categories, Tags and Custom Taxonomies for WordPress</a></h3>
 		<p class="author">
 		<span class="date">December 12, 2013</span>
@@ -102,7 +102,7 @@
 		</div>
 	</div>
 	
-	<div class="post col4 brick">
+	<div class="post brick">
 		<h3 class="excerpt-title"><a href="/wordpress/simple-related-posts-widget.html">A Simple Related Posts Widget</a></h3>
 		<p class="author">
 		<span class="date">December 2, 2013</span>
@@ -114,7 +114,7 @@
 		</div>
 	</div>
 	
-	<div class="post col4 brick">
+	<div class="post brick">
 		<h3 class="excerpt-title"><a href="/wordpress/responsive-comment-forms.html">Responsive Comment Forms</a></h3>
 		<p class="author">
 		<span class="date">May 29, 2013</span>
@@ -138,7 +138,18 @@
 	
 </div>-->
       		</div>	
-     </div><!-- #wrapper, .container -->
+	</div><!-- #wrapper, .container -->
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js" rel=""></script>
+		<script src="/javascript/masonry.pkgd.min.js"></script>
+		<script>
+			var $container = $('#wall');
+			// initialize
+			$container.masonry({
+			//columnWidth: 200,
+			itemSelector: '.brick'
+			});
+		</script>
+
 		<script>
 			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;

@@ -106,7 +106,18 @@
 	</div>
 </div>
 
-     </div><!-- #wrapper, .container -->
+	</div><!-- #wrapper, .container -->
+		<script src="https://code.jquery.com/jquery-2.1.3.min.js" rel=""></script>
+		<script src="/javascript/masonry.pkgd.min.js"></script>
+		<script>
+			var $container = $('#wall');
+			// initialize
+			$container.masonry({
+			//columnWidth: 200,
+			itemSelector: '.brick'
+			});
+		</script>
+
 		<script>
 			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
 			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
