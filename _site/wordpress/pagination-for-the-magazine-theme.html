@@ -38,7 +38,7 @@
 
 <p>Say you have a front page that displays 3 posts in the slider. The slider is a loop. Then a default loop that shows your most recent posts. And the number of posts is determined by the setting in your Settings -&gt; Reading -&gt; Blog pages show at most X posts. </p>
 
-<p>First of all, you probably don&#39;t want to load the same template for your back pages. By default, clicking the pagination link will load the same template, but give the default loop and &#39;offset&#39; equal to number of posts in the <em>Blog pages show at most</em> setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template. Here is such a function. It goes in you functions.php file. You could redirect to index.php, but then your pagination will be off byt the number of poats in your slider. Those posts will appears on both the front page and page 2.  You need to duplicate index.php, and name it backpages.php.  </p>
+<p>First of all, you probably don’t want to load the same template for your back pages. By default, clicking the pagination link will load the same template, but give the default loop and ‘offset’ equal to number of posts in the <em>Blog pages show at most</em> setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template. Here is such a function. It goes in you functions.php file. You could redirect to index.php, but then your pagination will be off byt the number of poats in your slider. Those posts will appears on both the front page and page 2.  You need to duplicate index.php, and name it backpages.php.  </p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">function</span> <span class="nf">our_template_redirect</span><span class="p">()</span> <span class="p">{</span>
@@ -52,25 +52,26 @@
 
 <p>Next we need to fix the pagination on backpages.php. Use this code before the default loop on backpages.php, which re-calculates the offset value to account for the number of posts in the slider:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>         
-    <span class="c1">// We need an offset to account for the posts in the slider</span>
-    <span class="nv">$offset</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
-    
-    <span class="c1">// Next, determine how many posts per page you want, using WordPress&#39;s settings</span>
-    <span class="nv">$ppp</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span><span class="s1">&#39;posts_per_page&#39;</span><span class="p">);</span>
-    
-    <span class="c1">// What page are we on?</span>
-    <span class="nv">$paged</span> <span class="o">=</span> <span class="nx">get_query_var</span><span class="p">(</span> <span class="s1">&#39;paged&#39;</span> <span class="p">);</span>
-    
-    <span class="c1">// Manually determine page query offset: (offset + (current page minus one x posts per page)</span>
-    <span class="nv">$page_offset</span> <span class="o">=</span> <span class="nv">$offset</span> <span class="o">+</span> <span class="p">(</span> <span class="p">(</span><span class="nv">$paged</span> <span class="o">-</span><span class="mi">1</span> <span class="p">)</span> <span class="o">*</span> <span class="nv">$ppp</span> <span class="p">);</span>
-    
-    <span class="c1">// Define the query</span>
-    <span class="nx">query_posts</span><span class="p">(</span> <span class="s1">&#39;offset=&#39;</span> <span class="o">.</span> <span class="nv">$page_offset</span> <span class="p">);</span>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>			
+	<span class="c1">// We need an offset to account for the posts in the slider</span>
+	<span class="nv">$offset</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+	
+	<span class="c1">// Next, determine how many posts per page you want, using WordPress&#39;s settings</span>
+	<span class="nv">$ppp</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span><span class="s1">&#39;posts_per_page&#39;</span><span class="p">);</span>
+	
+	<span class="c1">// What page are we on?</span>
+	<span class="nv">$paged</span> <span class="o">=</span> <span class="nx">get_query_var</span><span class="p">(</span> <span class="s1">&#39;paged&#39;</span> <span class="p">);</span>
+	
+	<span class="c1">// Manually determine page query offset: (offset + (current page minus one x posts per page)</span>
+	<span class="nv">$page_offset</span> <span class="o">=</span> <span class="nv">$offset</span> <span class="o">+</span> <span class="p">(</span> <span class="p">(</span><span class="nv">$paged</span> <span class="o">-</span><span class="mi">1</span> <span class="p">)</span> <span class="o">*</span> <span class="nv">$ppp</span> <span class="p">);</span>
+	
+	<span class="c1">// Define the query</span>
+	<span class="nx">query_posts</span><span class="p">(</span> <span class="s1">&#39;offset=&#39;</span> <span class="o">.</span> <span class="nv">$page_offset</span> <span class="p">);</span>
 
-    <span class="c1">// Start the default loop</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">have_posts</span><span class="p">())</span> <span class="o">:</span> <span class="k">while</span> <span class="p">(</span><span class="nx">have_posts</span><span class="p">())</span> <span class="o">:</span> <span class="nx">the_post</span><span class="p">();</span> 
+	<span class="c1">// Start the default loop</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">have_posts</span><span class="p">())</span> <span class="o">:</span> <span class="k">while</span> <span class="p">(</span><span class="nx">have_posts</span><span class="p">())</span> <span class="o">:</span> <span class="nx">the_post</span><span class="p">();</span> 
 <span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+
 
 		</div>
 	</div>

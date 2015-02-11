@@ -63,9 +63,9 @@
                         <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;radio-choice&quot;</span><span class="nt">&gt;</span>
                             <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;cmd&quot;</span> <span class="na">value=</span><span class="s">&quot;_xclick-subscriptions&quot;</span> <span class="na">id=</span><span class="s">&quot;severalTimes&quot;</span> <span class="na">checked</span><span class="nt">&gt;</span>
                             <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;severalTimes&quot;</span><span class="nt">&gt;</span>Recurring Donation<span class="nt">&lt;/label&gt;</span>
-                            <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;cmd&quot;</span> <span class="na">value=</span><span class="s">&quot;_donations&quot;</span> <span class="na">id=</span><span class="s">&quot;oneTime&quot;</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;oneTime&quot;</span><span class="nt">&gt;</span>One-time Donation<span class="nt">&lt;/label&gt;</span>
-                        <span class="nt">&lt;/div&gt;</span>
+							<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">name=</span><span class="s">&quot;cmd&quot;</span> <span class="na">value=</span><span class="s">&quot;_donations&quot;</span> <span class="na">id=</span><span class="s">&quot;oneTime&quot;</span><span class="nt">&gt;</span>
+							<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;oneTime&quot;</span><span class="nt">&gt;</span>One-time Donation<span class="nt">&lt;/label&gt;</span>
+						<span class="nt">&lt;/div&gt;</span>
                     <span class="nt">&lt;/td&gt;</span>
                 <span class="nt">&lt;/tr&gt;</span>
                 <span class="nt">&lt;tr&gt;</span>
@@ -107,27 +107,28 @@
 <p>It requires this bit of jQuery to switch the forms:</p>
 
 <div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">jQuery</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input[id=&#39;oneTime&#39;]&quot;</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s1">&#39;:checked&#39;</span><span class="p">))</span> <span class="p">{</span> 
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.recurring&#39;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#donationAmount&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;input type=&quot;text&quot; name=&quot;amount&quot; placeholder=&quot;25&quot; class=&quot;oneTime&quot; id=&quot;amountInput&quot;&gt;&#39;</span><span class="p">);</span>
-        <span class="p">}</span> 
-    <span class="p">});</span>
-    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input[id=&#39;severalTimes&#39;]&quot;</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s1">&#39;:checked&#39;</span><span class="p">))</span> <span class="p">{</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.oneTime&#39;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#recurringFrequency&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td class=&quot;recurring&quot;&gt;&lt;label for=&quot;frequency&quot;&gt;Frequency&lt;/label&gt;&lt;/td&gt;</span>
-<span class="s1">               &lt;td class=&quot;recurring&quot;&gt;&lt;select name=&quot;t3&quot; id=&quot;frequency&quot;&gt; </span>
-<span class="s1">               &lt;option value=&quot;M&quot; selected=&quot;selected&quot;&gt;Monthly&lt;/option&gt; </span>
-<span class="s1">               &lt;option value=&quot;Y&quot;&gt;Yearly&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;&#39;</span><span class="p">);</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#recurringHiddenInputs&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39; &lt;input type=&quot;hidden&quot; name=&quot;p3&quot; value=&quot;1&quot; class=&quot;recurring&quot;&gt; </span>
-<span class="s1">               &lt;input type=&quot;hidden&quot; name=&quot;src&quot; value=&quot;1&quot; class=&quot;recurring&quot;&gt; </span>
-<span class="s1">               &lt;input type=&quot;hidden&quot; name=&quot;no_note&quot; value=&quot;0&quot; class=&quot;recurring&quot;&gt; </span>
-<span class="s1">               &lt;input type=&quot;hidden&quot; name=&quot;bn&quot; value=&quot;PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest&quot; class=&quot;recurring&quot;&gt; &#39;</span><span class="p">);</span>
-            <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#donationAmount&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;input type=&quot;text&quot; name=&quot;a3&quot; placeholder=&quot;25&quot; class=&quot;recurring&quot;&gt;&#39;</span><span class="p">);</span>
-        <span class="p">}</span>
-    <span class="p">})</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input[id=&#39;oneTime&#39;]&quot;</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s1">&#39;:checked&#39;</span><span class="p">))</span> <span class="p">{</span> 
+			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.recurring&#39;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#donationAmount&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;input type=&quot;text&quot; name=&quot;amount&quot; placeholder=&quot;25&quot; class=&quot;oneTime&quot; id=&quot;amountInput&quot;&gt;&#39;</span><span class="p">);</span>
+		<span class="p">}</span> 
+	<span class="p">});</span>
+	<span class="nx">$</span><span class="p">(</span><span class="s2">&quot;input[id=&#39;severalTimes&#39;]&quot;</span><span class="p">).</span><span class="nx">change</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">is</span><span class="p">(</span><span class="s1">&#39;:checked&#39;</span><span class="p">))</span> <span class="p">{</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.oneTime&#39;</span><span class="p">).</span><span class="nx">remove</span><span class="p">();</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#recurringFrequency&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;td class=&quot;recurring&quot;&gt;&lt;label for=&quot;frequency&quot;&gt;Frequency&lt;/label&gt;&lt;/td&gt;</span>
+<span class="s1">				&lt;td class=&quot;recurring&quot;&gt;&lt;select name=&quot;t3&quot; id=&quot;frequency&quot;&gt; </span>
+<span class="s1">				&lt;option value=&quot;M&quot; selected=&quot;selected&quot;&gt;Monthly&lt;/option&gt; </span>
+<span class="s1">				&lt;option value=&quot;Y&quot;&gt;Yearly&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;&#39;</span><span class="p">);</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#recurringHiddenInputs&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39; &lt;input type=&quot;hidden&quot; name=&quot;p3&quot; value=&quot;1&quot; class=&quot;recurring&quot;&gt; </span>
+<span class="s1">				&lt;input type=&quot;hidden&quot; name=&quot;src&quot; value=&quot;1&quot; class=&quot;recurring&quot;&gt; </span>
+<span class="s1">				&lt;input type=&quot;hidden&quot; name=&quot;no_note&quot; value=&quot;0&quot; class=&quot;recurring&quot;&gt; </span>
+<span class="s1">				&lt;input type=&quot;hidden&quot; name=&quot;bn&quot; value=&quot;PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest&quot; class=&quot;recurring&quot;&gt; &#39;</span><span class="p">);</span>
+			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#donationAmount&#39;</span><span class="p">).</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;&lt;input type=&quot;text&quot; name=&quot;a3&quot; placeholder=&quot;25&quot; class=&quot;recurring&quot;&gt;&#39;</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">})</span>
 <span class="p">});</span></code></pre></div>
+
 
 		</div>
 	</div>
