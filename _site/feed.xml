@@ -283,7 +283,9 @@
 
 &lt;p&gt;There is a lot you can do with Categories and Tags. I&amp;#39;ve always told my clients &amp;quot;use as few categories as you need to organize your site, and as many tags as you like&amp;quot;. That sums it up.  Categories are to divide your content into sections, tags are open ended, and can be used to add keywords to your posts.&lt;/p&gt;
 
-&lt;p&gt;If you want to sort posts by a particular criteria or value, by far the simplest way to do it is with a new taxonomy. For example, if you have a store, each product needs a SKU, then you make a taxonomy for it. And another one for price, etc.&lt;/p&gt;
+&lt;p&gt;If you want to sort posts by a particular criteria or value, by far the simplest way to do it is with a new taxonomy. For example, if you have a store, each product needs a SKU, then you make a taxonomy for it. And another one for price, etc. &lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;edit: What was I thinking? a SKU and a price should be entered in custom fields&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://fashioncow.com/&quot;&gt;Fashioncow.com&lt;/a&gt; was the first site I added custom taxonomies to. To see Fashioncow&amp;#39;s taxonomies on the front page, scroll down and look on the sidebar: you will see lists of photographers and models. Clicking a name will get you all posts featuring that photographer or model. When Tanya, owner of Fashioncow, wanted a list of photographers on her sidebar, I told her I would add a &lt;em&gt;photographer taxonomy&lt;/em&gt;, and she would have to go through all her posts, and enter the photographer (or photographers), in the new meta-box that would appear on her edit-post screen.&lt;/p&gt;
 
