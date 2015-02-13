@@ -173,163 +173,6 @@ a:focus {
 	clear:both;
 }
 
-.content [class*="col"] {
-	float:left;
-	margin-left:2.1276595744681%;
-	*margin-left:2.0744680851064%;
-}
-
-.content [class*="col"]:nth-child(3n-5) {
-	margin-left:0;
-}
-
-.content .col12 {
-	width:100%;
-	*width:99.946808510638%;
-}
-
-.content .col11 {
-	width:91.489361702128%;
-	*width:91.436170212766%;
-}
-
-.content .col10 {
-	width:82.978723404255%;
-	*width:82.925531914894%;
-}
-
-.content .col9 {
-	width:74.468085106383%;
-	*width:74.414893617021%;
-}
-
-.content .col8 {
-	width:65.957446808511%;
-	*width:65.904255319149%;
-}
-
-.content .col7 {
-	width:57.446808510638%;
-	*width:57.393617021277%;
-}
-
-.content .col6 {
-	width:48.936170212766%;
-	*width:48.882978723404%;
-}
-
-.content .col5 {
-	width:40.425531914894%;
-	*width:40.372340425532%;
-}
-
-.content .col4 {
-	width:31.914893617021%;
-	*width:31.86170212766%;
-}
-
-.content .col3 {
-	width:23.404255319149%;
-	*width:23.351063829787%;
-}
-
-.content .col2 {
-	width:14.893617021277%;
-	*width:14.840425531915%;
-}
-
-.content .col1 {
-	width:6.3829787234043%;
-	*width:6.3297872340426%;
-}
-
-/* Fluid grid to 1280px screen resolution, grid based for 1120px*/
-@media (min-width: 1200px) {
-	.content {
-		width:100%;
-	}
-	
-	.content:before,.content:after {
-		display:table;
-		line-height:0;
-		content:"";
-	}
-	
-	.content:after {
-		clear:both;
-	}
-	
-	.content [class*="col"] {
-		float:left;
-		margin-left:1.6949152542373%;
-		*margin-left:1.6417237648756%;
-	}
-	
-	.content [class*="col"]:nth-child(3n-5) {
-		margin-left:0;
-	}
-	
-	.content .col12 {
-		width:100%;
-		*width:99.946808510638%;
-	}
-	
-	.content .col11 {
-		width:91.525423728814%;
-		*width:91.472232239452%;
-	}
-	
-	.content .col10 {
-		width:83.050847457627%;
-		*width:82.997655968265%;
-	}
-	
-	.content .col9 {
-		width:74.576271186441%;
-		*width:74.523079697079%;
-	}
-	
-	.content .col8 {
-		width:66.101694915254%;
-		*width:66.048503425893%;
-	}
-	
-	.content .col7 {
-		width:57.627118644068%;
-		*width:57.573927154706%;
-	}
-	
-	.content .col6 {
-		width:49.152542372881%;
-		*width:49.09935088352%;
-	}
-	
-	.content .col5 {
-		width:40.677966101695%;
-		*width:40.624774612333%;
-	}
-	
-	.content .col4 {
-		width:32.203389830508%;
-		*width:32.150198341147%;
-	}
-	
-	.content .col3 {
-		width:23.728813559322%;
-		*width:23.67562206996%;
-	}
-	
-	.content .col2 {
-		width:15.254237288136%;
-		*width:15.201045798774%;
-	}
-	
-	.content .col1 {
-		width:6.7796610169492%;
-		*width:6.7264695275874%;
-	}
-}
-
 
 /* PETER'S STYLES */
 body {
@@ -473,19 +316,26 @@ pre {
 	background-color:#fefefd;
 }
 .brick {
-	
+	width: 30.333%; 
 }
 .pagination.brick {
 	height: auto;
 }
-header.hgroup {
-	padding: 0 1.5% 1.5em;	
+.hgroup {
+	padding: 2em 0 1em;
+	margin: 0 1.5%;
+	float: left;
+	width: 63.666%;
+}
+.contact {
+	padding: 2em 0 1em;
+	margin: 0 1.5%;	
+	width: 30.333%;
+	float: right;
 }
 .post {
 	border-bottom:1px dashed #774;
 	padding: 2em 0 1em;
-	margin-top: 0;
-	width: 30.333%; 
 	margin: 0 1.5%;
 }
 .post:nth-child(-n+3) {
