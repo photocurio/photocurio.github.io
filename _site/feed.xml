@@ -8,9 +8,9 @@
     
       <item>
         <title>Assigning templates to Categories</title>
-        <description>&lt;p&gt;WordPress has an odd way of handling category templates. You are supposed to create a file called &lt;strong&gt;category-wildlife.php&lt;/strong&gt; for the ‘wildlife’ category.&lt;/p&gt;
+        <description>&lt;p&gt;WordPress has an odd way of handling category templates. You are supposed to create a file called &lt;strong&gt;category-wildlife.php&lt;/strong&gt; for the ‘wildlife’ category.  While that is intuitive and simple, suppose you have 50 categories on your site, and 3 category layouts?  &lt;/p&gt;
 
-&lt;p&gt;While that is intuitive and simple, suppose you have 50 categories on your site, and you need 3 templates?  Suppose you three different templates and each one corresponds to a different layout.  You want to be able to edit a category, and assign it a template from your list of three choices. That’s how page templates work.  You certainly don’t want 50 template files for your 50 categories.&lt;/p&gt;
+&lt;p&gt;You want to be able to edit a category, and assign it a template from your list of three choices. That’s how page templates work.  You certainly don’t want 50 template files for your 50 categories.&lt;/p&gt;
 
 &lt;p&gt;Here is the way to do it:&lt;/p&gt;
 

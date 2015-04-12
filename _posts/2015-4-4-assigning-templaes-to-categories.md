@@ -5,9 +5,9 @@ date:   2015-4-4
 categories: WordPress
 ---
 
-WordPress has an odd way of handling category templates. You are supposed to create a file called **category-wildlife.php** for the 'wildlife' category.
+WordPress has an odd way of handling category templates. You are supposed to create a file called **category-wildlife.php** for the 'wildlife' category.  While that is intuitive and simple, suppose you have 50 categories on your site, and 3 category layouts?  
 
-While that is intuitive and simple, suppose you have 50 categories on your site, and you need 3 templates?  Suppose you three different templates and each one corresponds to a different layout.  You want to be able to edit a category, and assign it a template from your list of three choices. That's how page templates work.  You certainly don't want 50 template files for your 50 categories.
+You want to be able to edit a category, and assign it a template from your list of three choices. That's how page templates work.  You certainly don't want 50 template files for your 50 categories.
 
 Here is the way to do it:
 
