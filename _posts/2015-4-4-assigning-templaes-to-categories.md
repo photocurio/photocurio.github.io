@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Assigning templates to Categories"
+title:  "Assigning Templates to Categories"
 date:   2015-4-4
 categories: WordPress
 ---

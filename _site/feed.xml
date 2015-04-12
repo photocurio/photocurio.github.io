@@ -7,7 +7,7 @@
     <atom:link href="http://petermumford.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
-        <title>Assigning templates to Categories</title>
+        <title>Assigning Templates to Categories</title>
         <description>&lt;p&gt;WordPress has an odd way of handling category templates. You are supposed to create a file called &lt;strong&gt;category-wildlife.php&lt;/strong&gt; for the ‘wildlife’ category.  While that is intuitive and simple, suppose you have 50 categories on your site, and 3 category layouts?  &lt;/p&gt;
 
 &lt;p&gt;You want to be able to edit a category, and assign it a template from your list of three choices. That’s how page templates work.  You certainly don’t want 50 template files for your 50 categories.&lt;/p&gt;
