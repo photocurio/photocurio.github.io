@@ -7,6 +7,47 @@
     <atom:link href="http://petermumford.net/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>Assigning templates to Categories</title>
+        <description>&lt;p&gt;WordPress has an odd way of handling category templates. You are supposed to create a file called &lt;strong&gt;category-wildlife.php&lt;/strong&gt; for the ‘wildlife’ category.&lt;/p&gt;
+
+&lt;p&gt;While that is intuitive and simple, suppose you have 50 categories on your site, and you need 3 templates?  Suppose you three different templates and each one corresponds to a different layout.  You want to be able to edit a category, and assign it a template from your list of three choices. That’s how page templates work.  You certainly don’t want 50 template files for your 50 categories.&lt;/p&gt;
+
+&lt;p&gt;Here is the way to do it:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Use &lt;a href=&quot;https://wordpress.org/plugins/advanced-custom-fields/&quot;&gt;Advanced Custom Fields&lt;/a&gt; to put a custom field named ‘template’ on your categories. I made radio button fields, with one button corresponding to each category template that I’m using: &lt;em&gt;standard&lt;/em&gt;, &lt;em&gt;sorted&lt;/em&gt; and &lt;em&gt;tabbed&lt;/em&gt;. I set standard as a default field. &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Create three category templates: category-standard.php, category-sorted.php, category-tabbed.php.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make a &lt;em&gt;template redirect&lt;/em&gt; to load the correct template depending on the value of the template field.  Paste it into your functions file.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;category_template_redirect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;is_category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$this_cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_the_category&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;nv&quot;&gt;$template_field&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;get_field&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;template&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$this_cat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;have_posts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;include&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;TEMPLATEPATH&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;/category-&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$template_field&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.php&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;die&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;nv&quot;&gt;$wp_query&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;is_404&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;add_action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;template_redirect&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;category_template_redirect&amp;#39;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sat, 04 Apr 2015 00:00:00 -0400</pubDate>
+        <link>http://petermumford.net//wordpress/assigning-templaes-to-categories.html</link>
+        <guid isPermaLink="true">http://petermumford.net//wordpress/assigning-templaes-to-categories.html</guid>
+      </item>
+    
+      <item>
         <title>Through the Custom Fields, Iterating Along</title>
         <description>&lt;p&gt;I discovered the plugin &lt;a href=&quot;https://wordpress.org/plugins/advanced-custom-fields/&quot;&gt;Advanced Custom Fields&lt;/a&gt; last summer.  This is such a powerful plugin. I immediately bought the &lt;a href=&quot;http://www.advancedcustomfields.com/add-ons/repeater-field/&quot;&gt;Repeater Field&lt;/a&gt; addon. With repeater fields you can make rows of the same type of field.  &lt;em&gt;Loops&lt;/em&gt; of fields.&lt;/p&gt;
 
