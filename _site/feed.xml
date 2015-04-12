@@ -161,11 +161,11 @@
 
 &lt;p&gt;Say you have a front page that displays 3 posts in the slider. The slider is a loop. Then a default loop that shows your most recent posts. And the number of posts is determined by the setting in your Settings -&amp;gt; Reading -&amp;gt; Blog pages show at most X posts. &lt;/p&gt;
 
-&lt;p&gt;First of all, you probably don’t want to load the same template for your back pages. By default, clicking the pagination link will load the same template, but give the default loop and ‘offset’ equal to number of posts in the &lt;em&gt;Blog pages show at most&lt;/em&gt; setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template.   &lt;/p&gt;
+&lt;p&gt;First of all, you probably don’t want to load the same template for your back pages. You probably don’t want the slider on the back pages. By default, clicking the pagination link will load the same template, but give the default loop and ‘offset’ equal to number of posts in the &lt;em&gt;Blog pages show at most&lt;/em&gt; setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template.   &lt;/p&gt;
 
-&lt;p&gt;This is the fix: First, duplicate index.php, and name it backpages.php.  &lt;/p&gt;
+&lt;p&gt;This is the fix: duplicate index.php, and name it backpages.php.  &lt;/p&gt;
 
-&lt;p&gt;Second, you need a redirect to backpages.php. It goes in the functions.php file. You could redirect to index.php, but then your pagination will be off by the number of posts in your slider. Those posts will appears on both the front page and on page 2.&lt;/p&gt;
+&lt;p&gt;Second, you need a redirect to backpages.php. It goes in the functions.php file. &lt;/p&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;our_template_redirect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;

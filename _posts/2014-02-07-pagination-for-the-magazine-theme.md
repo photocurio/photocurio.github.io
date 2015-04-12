@@ -9,11 +9,11 @@ Maybe you have a magazine-style WordPress theme with a slider at the top of the 
 
 Say you have a front page that displays 3 posts in the slider. The slider is a loop. Then a default loop that shows your most recent posts. And the number of posts is determined by the setting in your Settings -> Reading -> Blog pages show at most X posts. 
 
-First of all, you probably don't want to load the same template for your back pages. By default, clicking the pagination link will load the same template, but give the default loop and 'offset' equal to number of posts in the _Blog pages show at most_ setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template.   
+First of all, you probably don't want to load the same template for your back pages. You probably don't want the slider on the back pages. By default, clicking the pagination link will load the same template, but give the default loop and 'offset' equal to number of posts in the _Blog pages show at most_ setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template.   
 
-This is the fix: First, duplicate index.php, and name it backpages.php.  
+This is the fix: duplicate index.php, and name it backpages.php.  
 
-Second, you need a redirect to backpages.php. It goes in the functions.php file. You could redirect to index.php, but then your pagination will be off by the number of posts in your slider. Those posts will appears on both the front page and on page 2.
+Second, you need a redirect to backpages.php. It goes in the functions.php file. 
 
 {% highlight php %}
 <?php
