@@ -34,11 +34,15 @@
 		<div class="content">
 			<h1 class="posttitle">Pagination for the Magazine Theme</h1>
 			<p class="meta">February 7, 2014</p>
-			<p>So, you have a magazine-style WordPress theme with a slider that loads three posts before the default loop. The issue of pagination come up when the user hits the Older Posts link.</p>
+			<p>Maybe you have a magazine-style WordPress theme with a slider at the top of the front page. The issue of pagination comes up when the user hits the Older Posts link.</p>
 
 <p>Say you have a front page that displays 3 posts in the slider. The slider is a loop. Then a default loop that shows your most recent posts. And the number of posts is determined by the setting in your Settings -&gt; Reading -&gt; Blog pages show at most X posts. </p>
 
-<p>First of all, you probably don’t want to load the same template for your back pages. By default, clicking the pagination link will load the same template, but give the default loop and ‘offset’ equal to number of posts in the <em>Blog pages show at most</em> setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template. Here is such a function. It goes in you functions.php file. You could redirect to index.php, but then your pagination will be off byt the number of poats in your slider. Those posts will appears on both the front page and page 2.  You need to duplicate index.php, and name it backpages.php.  </p>
+<p>First of all, you probably don’t want to load the same template for your back pages. By default, clicking the pagination link will load the same template, but give the default loop and ‘offset’ equal to number of posts in the <em>Blog pages show at most</em> setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template.   </p>
+
+<p>This is the fix: First, duplicate index.php, and name it backpages.php.  </p>
+
+<p>Second, you need a redirect to backpages.php. It goes in the functions.php file. You could redirect to index.php, but then your pagination will be off by the number of posts in your slider. Those posts will appears on both the front page and on page 2.</p>
 
 <div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">function</span> <span class="nf">our_template_redirect</span><span class="p">()</span> <span class="p">{</span>
