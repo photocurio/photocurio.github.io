@@ -177,7 +177,8 @@ body {
 h1,h2,h3 {
 	color:#665;
 }
-
+p {
+}
 a {
 	color:#a13300;
 	text-decoration:none;
@@ -223,6 +224,7 @@ body {
 	font-size:1em;
 }
 p {
+	font-size: 1.05em;
 	margin: .7em 0;
 }
 h1,h2,h3,h4,h5,h6 {
@@ -240,13 +242,15 @@ h3 {
 h1,h2,h3 {
 	font-family: 'Old Standard TT', serif;
 }
+small {
+	font-size: .95em;
+}
 .excerpt-title {
 	font-size: 1.4em;
 	line-height: 1.1;
 	text-transform: capitalize;
 	margin-bottom: .4em;
 }
-
 .sitename {
 	font-size:2em;
 	margin-bottom:.4em;

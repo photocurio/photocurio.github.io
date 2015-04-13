@@ -8,9 +8,7 @@ subtitle: WordPress and Jekyll web development
 	{% for post in paginator.posts %}
 	<div class="post brick">
 		<h3 class="excerpt-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
-		<p class="author">
-		<span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
-		</p>
+		<small class="meta">{{ post.date | date: "%B %-d, %Y" }}</small>
 		<div class="excerpt">
 		{{ post.excerpt }}
 		</div>
