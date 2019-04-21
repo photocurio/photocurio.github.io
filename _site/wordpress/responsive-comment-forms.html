@@ -6,7 +6,7 @@
 		<title> Responsive Comment Forms by Peter Mumford </title>
 		<meta name="viewport" content="width=device-width">
 		<link href="http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700" rel="stylesheet">
-		<link href="/style.css" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link href="/favicon.png" rel="icon">
 		<link href="http://petermumford.net/feed.xml" rel="alternate" type="application/atom+xml">
@@ -15,52 +15,54 @@
 	<body>
 		<div id="wrapper" class="container clearfix">
 
+
 <header class="content clearfix">
 	<div class="hgroup">
-		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog</a></h1>
+		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s WordPress Dev Blog</a></h1>
 		<h3 class="slogan">Problem Solving for Website Owners and Designers</h2>
 		<p class="intro">&mdash;by a guy who loves WordPress. And I also love <a href='http://jekyllrb.com/'>Jekyll</a>.  This blog is made with Jekyll. Its hosted at my <a href='https://github.com/photocurio/'>Github</a> account.</p>
 	</div>
 	<div class="contact">
 		<p class="vcard">I live in <span class="locality">Somerville</span>, <span class="region">MA</span>.</p>
-		<p>I like to sail and row boats, play chess, brew beer and read novels.</p>
+		<p>I like to sail boats, play chess, and read novels.</p>
 		<p class="vcard"><em>tweet:</em> <span class="twitter"><a href="https://twitter.com/photocurio">@photocurio</a></span><br>
 		<em>email:</em> <span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span></p>
 	</div>
-</header>        	
+</header>
+        	
 
 <div class="single content">
 	<div class="post">
 		<div class="content">
 			<h1 class="posttitle">Responsive Comment Forms</h1>
 			<small class="meta">May 29, 2013</small>
-			<p>After you make the front page of your theme responsive (see my <a href="http://topheavypilesofbooks.com/2012/10/coding-a-responsive-site/">previous post</a>), you need to check the other templates. And one area that might break your theme, and resists the simple CSS-media-queries method, is <strong>the comments form</strong>, typically loaded on the single post template. </p>
+			<p>After you make the front page of your theme responsive (see my <a href="http://topheavypilesofbooks.com/2012/10/coding-a-responsive-site/">previous post</a>), you need to check the other templates. And one area that might break your theme, and resists the simple CSS-media-queries method, is <strong>the comments form</strong>, typically loaded on the single post template.</p>
 
 <p>That’s because forms tend to have fixed widths, and whats more, the width is defined by with inline HTML, or at least its defined that way by default in the Wordpress comments template. The template outputs the following HTML for the Name field:</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;author&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">size=</span><span class="s">&quot;30&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="na">name=</span><span class="s">&quot;author&quot;</span><span class="nt">&gt;</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">"author"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">aria-required=</span><span class="s">"true"</span> <span class="na">size=</span><span class="s">"30"</span> <span class="na">value=</span><span class="s">""</span> <span class="na">name=</span><span class="s">"author"</span><span class="nt">&gt;</span></code></pre></figure>
 
-<p>The <code>size="30"</code> is what controls the width. I don’t know what units this is in.. thirty characters maybe? In any case this is impervious to CSS. There is a way to make this responsive however, and it goes back to the template hook that loads the comment forms: <code>comment_form();</code>.  It turns out that you can override the default options quite easily (see the Wordpress <a href="http://codex.wordpress.org/Function_Reference/comment_form">codex</a>). What I do is use an <code>if (is_mobile())</code> statement to load a smart phone size comment form, and an <em>else</em> statement to load the non-mobile, default comment form. The code is rather long, but here it is:</p>
+<p>The <code class="highlighter-rouge">size="30"</code> is what controls the width. I don’t know what units this is in.. thirty characters maybe? In any case this is impervious to CSS. There is a way to make this responsive however, and it goes back to the template hook that loads the comment forms: <code class="highlighter-rouge">comment_form();</code>.  It turns out that you can override the default options quite easily (see the Wordpress <a href="http://codex.wordpress.org/Function_Reference/comment_form">codex</a>). What I do is use an <code class="highlighter-rouge">if (is_mobile())</code> statement to load a smart phone size comment form, and an <em>else</em> statement to load the non-mobile, default comment form. The code is rather long, but here it is:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">if</span> <span class="p">(</span><span class="nx">is_mobile</span><span class="p">())</span> <span class="p">{</span>
 	<span class="nv">$args</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-		<span class="s1">&#39;comment_field&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;p class=&quot;comment-form-comment&quot;&gt;&lt;label for=&quot;comment&quot;&gt;&#39;</span> <span class="o">.</span> <span class="nx">_x</span><span class="p">(</span> <span class="s1">&#39;Comment&#39;</span><span class="p">,</span> <span class="s1">&#39;noun&#39;</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&lt;/label&gt;&lt;textarea id=&quot;comment&quot; name=&quot;comment&quot; cols=&quot;28&quot; rows=&quot;8&quot; aria-required=&quot;true&quot;&gt;&lt;/textarea&gt;&lt;/p&gt;&#39;</span><span class="p">,</span>
-		<span class="s1">&#39;fields&#39;</span> <span class="o">=&gt;</span> <span class="nx">apply_filters</span><span class="p">(</span> <span class="s1">&#39;comment_form_default_fields&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
-			<span class="s1">&#39;author&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;p class=&quot;comment-form-author&quot;&gt;&#39;</span> <span class="o">.</span> <span class="s1">&#39;&lt;label for=&quot;author&quot;&gt;&#39;</span> <span class="o">.</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;domainreference&#39;</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&lt;/label&gt; &#39;</span> <span class="o">.</span> <span class="p">(</span> <span class="nv">$req</span> <span class="o">?</span> <span class="s1">&#39;&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;&#39;</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&lt;input id=&quot;author&quot; name=&quot;author&quot; type=&quot;text&quot; value=&quot;&#39;</span> <span class="o">.</span> <span class="nx">esc_attr</span><span class="p">(</span> <span class="nv">$commenter</span><span class="p">[</span><span class="s1">&#39;comment_author&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&quot; size=&quot;27&quot;&#39;</span> <span class="o">.</span> <span class="nv">$aria_req</span> <span class="o">.</span> <span class="s1">&#39; /&gt;&lt;/p&gt;&#39;</span><span class="p">,</span>
-			<span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;p class=&quot;comment-form-email&quot;&gt;&lt;label for=&quot;email&quot;&gt;&#39;</span> <span class="o">.</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Email&#39;</span><span class="p">,</span> <span class="s1">&#39;domainreference&#39;</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&lt;/label&gt; &#39;</span> <span class="o">.</span> <span class="p">(</span> <span class="nv">$req</span> <span class="o">?</span> <span class="s1">&#39;&lt;span class=&quot;required&quot;&gt;*&lt;/span&gt;&#39;</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&lt;input id=&quot;email&quot; name=&quot;email&quot; type=&quot;text&quot; value=&quot;&#39;</span> <span class="o">.</span> <span class="nx">esc_attr</span><span class="p">(</span> <span class="nv">$commenter</span><span class="p">[</span><span class="s1">&#39;comment_author_email&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&quot; size=&quot;27&quot;&#39;</span> <span class="o">.</span> <span class="nv">$aria_req</span> <span class="o">.</span> <span class="s1">&#39; /&gt;&lt;/p&gt;&#39;</span><span class="p">,</span>
-			<span class="s1">&#39;url&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;p class=&quot;comment-form-url&quot;&gt;&lt;label for=&quot;url&quot;&gt;&#39;</span> <span class="o">.</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">&#39;Website&#39;</span><span class="p">,</span> <span class="s1">&#39;domainreference&#39;</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&lt;/label&gt;&#39;</span> <span class="o">.</span> <span class="s1">&#39;&lt;input id=&quot;url&quot; name=&quot;url&quot; type=&quot;text&quot; value=&quot;&#39;</span> <span class="o">.</span> <span class="nx">esc_attr</span><span class="p">(</span> <span class="nv">$commenter</span><span class="p">[</span><span class="s1">&#39;comment_author_url&#39;</span><span class="p">]</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;&quot; size=&quot;27&quot; /&gt;&lt;/p&gt;&#39;</span> 
+		<span class="s1">'comment_field'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;p class="comment-form-comment"&gt;&lt;label for="comment"&gt;'</span> <span class="o">.</span> <span class="nx">_x</span><span class="p">(</span> <span class="s1">'Comment'</span><span class="p">,</span> <span class="s1">'noun'</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'&lt;/label&gt;&lt;textarea id="comment" name="comment" cols="28" rows="8" aria-required="true"&gt;&lt;/textarea&gt;&lt;/p&gt;'</span><span class="p">,</span>
+		<span class="s1">'fields'</span> <span class="o">=&gt;</span> <span class="nx">apply_filters</span><span class="p">(</span> <span class="s1">'comment_form_default_fields'</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+			<span class="s1">'author'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;p class="comment-form-author"&gt;'</span> <span class="o">.</span> <span class="s1">'&lt;label for="author"&gt;'</span> <span class="o">.</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">'Name'</span><span class="p">,</span> <span class="s1">'domainreference'</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'&lt;/label&gt; '</span> <span class="o">.</span> <span class="p">(</span> <span class="nv">$req</span> <span class="o">?</span> <span class="s1">'&lt;span class="required"&gt;*&lt;/span&gt;'</span> <span class="o">:</span> <span class="s1">''</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'&lt;input id="author" name="author" type="text" value="'</span> <span class="o">.</span> <span class="nx">esc_attr</span><span class="p">(</span> <span class="nv">$commenter</span><span class="p">[</span><span class="s1">'comment_author'</span><span class="p">]</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'" size="27"'</span> <span class="o">.</span> <span class="nv">$aria_req</span> <span class="o">.</span> <span class="s1">' /&gt;&lt;/p&gt;'</span><span class="p">,</span>
+			<span class="s1">'email'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;p class="comment-form-email"&gt;&lt;label for="email"&gt;'</span> <span class="o">.</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">'Email'</span><span class="p">,</span> <span class="s1">'domainreference'</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'&lt;/label&gt; '</span> <span class="o">.</span> <span class="p">(</span> <span class="nv">$req</span> <span class="o">?</span> <span class="s1">'&lt;span class="required"&gt;*&lt;/span&gt;'</span> <span class="o">:</span> <span class="s1">''</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'&lt;input id="email" name="email" type="text" value="'</span> <span class="o">.</span> <span class="nx">esc_attr</span><span class="p">(</span> <span class="nv">$commenter</span><span class="p">[</span><span class="s1">'comment_author_email'</span><span class="p">]</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'" size="27"'</span> <span class="o">.</span> <span class="nv">$aria_req</span> <span class="o">.</span> <span class="s1">' /&gt;&lt;/p&gt;'</span><span class="p">,</span>
+			<span class="s1">'url'</span> <span class="o">=&gt;</span> <span class="s1">'&lt;p class="comment-form-url"&gt;&lt;label for="url"&gt;'</span> <span class="o">.</span> <span class="nx">__</span><span class="p">(</span> <span class="s1">'Website'</span><span class="p">,</span> <span class="s1">'domainreference'</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'&lt;/label&gt;'</span> <span class="o">.</span> <span class="s1">'&lt;input id="url" name="url" type="text" value="'</span> <span class="o">.</span> <span class="nx">esc_attr</span><span class="p">(</span> <span class="nv">$commenter</span><span class="p">[</span><span class="s1">'comment_author_url'</span><span class="p">]</span> <span class="p">)</span> <span class="o">.</span> <span class="s1">'" size="27" /&gt;&lt;/p&gt;'</span> 
 		<span class="p">)</span> <span class="p">)</span> 
 	<span class="p">);</span>
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-	<span class="nv">$args</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+	<span class="nv">$args</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nx">comment_form</span><span class="p">(</span><span class="nv">$args</span><span class="p">);</span> 
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span></code></pre></figure>
 
-<p>Just replace the <code>comment_form();</code> hook in your theme with the above code. And BTW, it won’t work unless you have the <strong>Mobile Client Detection Plugin</strong> installed. That’s what lets you use the <code>is_mobile()</code> conditional.</p>
+<p>Just replace the <code class="highlighter-rouge">comment_form();</code> hook in your theme with the above code. And BTW, it won’t work unless you have the <strong>Mobile Client Detection Plugin</strong> installed. That’s what lets you use the <code class="highlighter-rouge">is_mobile()</code> conditional.</p>
 
-<p>What this code is doing is defining smaller textarea fields if the user agent is ‘mobile’. See the <code>size="27"</code> parts? that’s the key. And for the big textarea, I use cols=”28”. These numbers may be “magic numbers”, i.e. they just happen to fit my theme with the font I use, but its no worse than the bad magic numbers that were in there before.</p>
+<p>What this code is doing is defining smaller textarea fields if the user agent is ‘mobile’. See the <code class="highlighter-rouge">size="27"</code> parts? that’s the key. And for the big textarea, I use cols=”28”. These numbers may be “magic numbers”, i.e. they just happen to fit my theme with the font I use, but its no worse than the bad magic numbers that were in there before.</p>
 
 		</div>
 	</div>
@@ -92,14 +94,10 @@
 
 	</div><!-- #wrapper, .container -->
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js" rel=""></script>
-		<script src="/javascript/masonry.pkgd.min.js"></script>
+		<script src="/javascript/jquery.matchHeight-min.js"></script>
 		<script>
-			var $container = $('#wall');
-			// initialize
-			$container.masonry({
-			//columnWidth: 200,
-			itemSelector: '.brick'
-			});
+			$('.brick').matchHeight();
+
 		</script>
 
 		<script>
@@ -112,3 +110,4 @@
 		</script>
     </body>
 </html>
+

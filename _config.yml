@@ -1,12 +1,13 @@
-sitename: "Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog"
+sitename: "Peter Mumford&rsquo;s WordPress Dev Blog"
 slogan: "Problem Solving for Website Owners and Designers"
 intro: "&mdash;by a guy who loves WordPress. And I also love <a href='http://jekyllrb.com/'>Jekyll</a>.  This blog is made with Jekyll. Its hosted at my <a href='https://github.com/photocurio/'>Github</a> account."
 # markdown: maruku
 url: "http://petermumford.net"
 permalink: "/:categories/:title.html"
+plugins: [jekyll-paginate]
 paginate: 9
 
 # for RSS feed generator
-name: "Peter Mumford's WordPress Dev Blog"  
+name: "Peter Mumford's WordPress Dev Blog"
 description: "Problem Solving for Website Owners and Designers"
 author: "Peter Mumford"

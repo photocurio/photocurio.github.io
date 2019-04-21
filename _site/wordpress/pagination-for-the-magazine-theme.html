@@ -6,7 +6,7 @@
 		<title> Pagination for the Magazine Theme by Peter Mumford </title>
 		<meta name="viewport" content="width=device-width">
 		<link href="http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700" rel="stylesheet">
-		<link href="/style.css" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link href="/favicon.png" rel="icon">
 		<link href="http://petermumford.net/feed.xml" rel="alternate" type="application/atom+xml">
@@ -15,19 +15,21 @@
 	<body>
 		<div id="wrapper" class="container clearfix">
 
+
 <header class="content clearfix">
 	<div class="hgroup">
-		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog</a></h1>
+		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s WordPress Dev Blog</a></h1>
 		<h3 class="slogan">Problem Solving for Website Owners and Designers</h2>
 		<p class="intro">&mdash;by a guy who loves WordPress. And I also love <a href='http://jekyllrb.com/'>Jekyll</a>.  This blog is made with Jekyll. Its hosted at my <a href='https://github.com/photocurio/'>Github</a> account.</p>
 	</div>
 	<div class="contact">
 		<p class="vcard">I live in <span class="locality">Somerville</span>, <span class="region">MA</span>.</p>
-		<p>I like to sail and row boats, play chess, brew beer and read novels.</p>
+		<p>I like to sail boats, play chess, and read novels.</p>
 		<p class="vcard"><em>tweet:</em> <span class="twitter"><a href="https://twitter.com/photocurio">@photocurio</a></span><br>
 		<em>email:</em> <span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span></p>
 	</div>
-</header>        	
+</header>
+        	
 
 <div class="single content">
 	<div class="post">
@@ -36,45 +38,45 @@
 			<small class="meta">February 7, 2014</small>
 			<p>Maybe you have a magazine-style WordPress theme with a slider at the top of the front page. The issue of pagination comes up when the user hits the Older Posts link.</p>
 
-<p>Say you have a front page that displays 3 posts in the slider. The slider is a loop. Then a default loop that shows your most recent posts. And the number of posts is determined by the setting in your Settings -&gt; Reading -&gt; Blog pages show at most X posts. </p>
+<p>Say you have a front page that displays 3 posts in the slider. The slider is a loop. Then a default loop that shows your most recent posts. And the number of posts is determined by the setting in your Settings -&gt; Reading -&gt; Blog pages show at most X posts.</p>
 
-<p>First of all, you probably don’t want to load the same template for your back pages. You probably don’t want the slider on the back pages. By default, clicking the pagination link will load the same template, but give the default loop and ‘offset’ equal to number of posts in the <em>Blog pages show at most</em> setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template.   </p>
+<p>First of all, you probably don’t want to load the same template for your back pages. You probably don’t want the slider on the back pages. By default, clicking the pagination link will load the same template, but give the default loop and ‘offset’ equal to number of posts in the <em>Blog pages show at most</em> setting. If you want second, and subsequent pages to skip the slider, and other front page stuff, and just show a list of posts, then you need a redirect to a different template.</p>
 
-<p>This is the fix: duplicate index.php, and name it backpages.php.  </p>
+<p>This is the fix: duplicate index.php, and name it backpages.php.</p>
 
-<p>Second, you need a redirect to backpages.php. It goes in the functions.php file. </p>
+<p>Second, you need a redirect to backpages.php. It goes in the functions.php file.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 <span class="k">function</span> <span class="nf">our_template_redirect</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">is_home</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="nx">is_paged</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">:</span>
-        <span class="k">include</span> <span class="p">(</span><span class="nx">get_stylesheet_directory</span><span class="p">()</span> <span class="o">.</span> <span class="s1">&#39;/backpages.php&#39;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="p">(</span><span class="nx">is_home</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="p">(</span> <span class="nx">is_paged</span><span class="p">(</span><span class="s1">'2'</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span><span class="o">:</span>
+        <span class="k">include</span> <span class="p">(</span><span class="nx">get_stylesheet_directory</span><span class="p">()</span> <span class="o">.</span> <span class="s1">'/backpages.php'</span><span class="p">);</span>
         <span class="k">exit</span><span class="p">;</span>
     <span class="k">endif</span><span class="p">;</span>
 <span class="p">}</span>
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;template_redirect&#39;</span><span class="p">,</span> <span class="s1">&#39;our_template_redirect&#39;</span> <span class="p">);</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'template_redirect'</span><span class="p">,</span> <span class="s1">'our_template_redirect'</span> <span class="p">);</span>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 <p>Next we need to fix the pagination on backpages.php. Use this code before the default loop on backpages.php, which re-calculates the offset value to account for the number of posts in the slider:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>			
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>			
 	<span class="c1">// We need an offset to account for the posts in the slider</span>
 	<span class="nv">$offset</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
 	
-	<span class="c1">// Next, determine how many posts per page you want, using WordPress&#39;s settings</span>
-	<span class="nv">$ppp</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span><span class="s1">&#39;posts_per_page&#39;</span><span class="p">);</span>
+	<span class="c1">// Next, determine how many posts per page you want, using WordPress's settings</span>
+	<span class="nv">$ppp</span> <span class="o">=</span> <span class="nx">get_option</span><span class="p">(</span><span class="s1">'posts_per_page'</span><span class="p">);</span>
 	
 	<span class="c1">// What page are we on?</span>
-	<span class="nv">$paged</span> <span class="o">=</span> <span class="nx">get_query_var</span><span class="p">(</span> <span class="s1">&#39;paged&#39;</span> <span class="p">);</span>
+	<span class="nv">$paged</span> <span class="o">=</span> <span class="nx">get_query_var</span><span class="p">(</span> <span class="s1">'paged'</span> <span class="p">);</span>
 	
 	<span class="c1">// Manually determine page query offset: (offset + (current page minus one x posts per page)</span>
 	<span class="nv">$page_offset</span> <span class="o">=</span> <span class="nv">$offset</span> <span class="o">+</span> <span class="p">(</span> <span class="p">(</span><span class="nv">$paged</span> <span class="o">-</span><span class="mi">1</span> <span class="p">)</span> <span class="o">*</span> <span class="nv">$ppp</span> <span class="p">);</span>
 	
 	<span class="c1">// Define the query</span>
-	<span class="nx">query_posts</span><span class="p">(</span> <span class="s1">&#39;offset=&#39;</span> <span class="o">.</span> <span class="nv">$page_offset</span> <span class="p">);</span>
+	<span class="nx">query_posts</span><span class="p">(</span> <span class="s1">'offset='</span> <span class="o">.</span> <span class="nv">$page_offset</span> <span class="p">);</span>
 
 	<span class="c1">// Start the default loop</span>
 	<span class="k">if</span> <span class="p">(</span><span class="nx">have_posts</span><span class="p">())</span> <span class="o">:</span> <span class="k">while</span> <span class="p">(</span><span class="nx">have_posts</span><span class="p">())</span> <span class="o">:</span> <span class="nx">the_post</span><span class="p">();</span> 
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 
 		</div>
@@ -107,14 +109,10 @@
 
 	</div><!-- #wrapper, .container -->
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js" rel=""></script>
-		<script src="/javascript/masonry.pkgd.min.js"></script>
+		<script src="/javascript/jquery.matchHeight-min.js"></script>
 		<script>
-			var $container = $('#wall');
-			// initialize
-			$container.masonry({
-			//columnWidth: 200,
-			itemSelector: '.brick'
-			});
+			$('.brick').matchHeight();
+
 		</script>
 
 		<script>
@@ -127,3 +125,4 @@
 		</script>
     </body>
 </html>
+

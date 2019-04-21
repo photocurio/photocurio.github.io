@@ -1,4 +1,4 @@
-/*!* ResponsiveBoilerplate v2.3.2 - 2014-06-24. 
+/*!* ResponsiveBoilerplate v2.3.2 - 2014-06-24.
 * Author: Fernando Monteiro - Licensed under MIT license.
 */
 
@@ -114,21 +114,21 @@ a:focus {
 		cursor:pointer;
 		background:#ddd;
 	}
-	
+
 	#menu span {
 		margin-right:10px;
 	}
-	
+
 	#nav {
 		display:none;
 	}
-	
+
 	#nav ul {
 		padding:2%;
 		margin:0 auto;
 		background-color:#ddd;
 	}
-	
+
 	#nav li {
 		display:block;
 		width:100%;
@@ -172,7 +172,7 @@ a:focus {
 /* PETER'S STYLES */
 body {
 	color:#443;
-	background:#e2e4de url(weave.gif) repeat fixed top left;
+	background:#e2e4de url(/images/weave.gif) repeat fixed top left;
 }
 h1,h2,h3 {
 	color:#665;
@@ -216,7 +216,7 @@ a:hover,a:focus {
 
 /*
 *
-* 	fonts 
+* 	fonts
 *
 */
 body {
@@ -315,10 +315,8 @@ pre {
 	background-color:#fefefd;
 }
 .brick {
-	width: 30.333%; 
-}
-.pagination.brick {
-	height: auto;
+	width: 30.333%;
+	float: left;
 }
 .hgroup {
 	padding: 2em 0 1em;
@@ -328,7 +326,7 @@ pre {
 }
 .contact {
 	padding: 2em 0 1em;
-	margin: 0 1.5%;	
+	margin: 0 1.5%;
 	width: 30.333%;
 	float: right;
 }
@@ -343,7 +341,7 @@ pre {
 	margin: 0 1.5%;
 }
 .post:nth-child(-n+3) {
-	border-top:1px dashed #774;	
+	border-top:1px dashed #774;
 }
 .widgettitle {
 	font-size: 1.5em;
@@ -365,63 +363,44 @@ pre {
 	@-ms-viewport {
 		width:device-width;
 	}
-	
+
 	@viewport {
 		width:device-width;
 	}
 }
 
-/* Add your styles for devices with a maximum width of 480 */
-@media screen and (max-width: 480px) {
-	
-}
-
-/* Add your styles for devices with a maximum width of 768 */
-@media screen and (max-width: 768px) {
-	
-}
-
-/* Add your styles for devices with a maximum width of 320 */
-@media screen and (max-width: 320px) {
-	
-}
-
-/* Add your styles for devices with a maximum width of 1024 */
-@media screen and (max-width: 1024px) {
-	
-}
 
 /* iPads (landscape) and (portrait)  ----------- */
 /* Add your styles for devices with a maximum width of 1024 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-	
+
 }
 
 /* Add your styles for devices with a maximum width of 768 */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-	
+
 }
 
 /* General small screen Mobile down size from 768px, display all columns in block
 ============================================================================================== */
 @media handheld,only screen and (max-width: 800px) {
-	
+
 	.container {
 		padding-right:10px;
 		padding-left:10px;
 	}
-	
+
 	.content {
 		width:100%;
 	}
-	
+
 	[class*="col"],.content [class*="col"] {
 		display:block;
 		float:none;
 		width:100%;
 		margin-left:0;
 	}
-	
+
 	.col12,.content .col12 {
 		width:100%;
 	}

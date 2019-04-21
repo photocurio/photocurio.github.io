@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://petermumford.net/wordpress/assigning-templaes-to-categories.html</loc>
+    <loc>http://localhost:4000/wordpress/assigning-templaes-to-categories.html</loc>
     
     <lastmod>2015-04-04T00:00:00-04:00</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>http://petermumford.net/wordpress/advanced-custom-fields.html</loc>
+    <loc>http://localhost:4000/wordpress/advanced-custom-fields.html</loc>
     
     <lastmod>2014-12-17T00:00:00-05:00</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>http://petermumford.net/wordpress/javascript/wordcamp-boston.html</loc>
+    <loc>http://localhost:4000/wordpress/javascript/wordcamp-boston.html</loc>
     
     <lastmod>2014-08-26T00:00:00-04:00</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://petermumford.net/wordpress/pagination-for-the-magazine-theme.html</loc>
+    <loc>http://localhost:4000/wordpress/pagination-for-the-magazine-theme.html</loc>
     
     <lastmod>2014-02-07T00:00:00-05:00</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://petermumford.net/css3/soft-links.html</loc>
+    <loc>http://localhost:4000/css3/soft-links.html</loc>
     
     <lastmod>2014-01-31T00:00:00-05:00</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>http://petermumford.net/wordpress/switchable-one-time-or-recurring-paypal-donation-button.html</loc>
+    <loc>http://localhost:4000/wordpress/switchable-one-time-or-recurring-paypal-donation-button.html</loc>
     
     <lastmod>2013-12-30T00:00:00-05:00</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>http://petermumford.net/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html</loc>
+    <loc>http://localhost:4000/wordpress/categories-tags-and-custom-taxonomies-for-wordpress.html</loc>
     
     <lastmod>2013-12-12T00:00:00-05:00</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>http://petermumford.net/wordpress/simple-related-posts-widget.html</loc>
+    <loc>http://localhost:4000/wordpress/simple-related-posts-widget.html</loc>
     
     <lastmod>2013-12-02T00:00:00-05:00</lastmod>
     
@@ -74,13 +74,15 @@
   </url>
   
   <url>
-    <loc>http://petermumford.net/wordpress/responsive-comment-forms.html</loc>
+    <loc>http://localhost:4000/wordpress/responsive-comment-forms.html</loc>
     
     <lastmod>2013-05-29T00:00:00-04:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  
+  
   
   
   

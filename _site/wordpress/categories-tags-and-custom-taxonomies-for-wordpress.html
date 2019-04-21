@@ -6,7 +6,7 @@
 		<title> Categories, Tags and Custom Taxonomies for WordPress by Peter Mumford </title>
 		<meta name="viewport" content="width=device-width">
 		<link href="http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700" rel="stylesheet">
-		<link href="/style.css" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link href="/favicon.png" rel="icon">
 		<link href="http://petermumford.net/feed.xml" rel="alternate" type="application/atom+xml">
@@ -15,26 +15,28 @@
 	<body>
 		<div id="wrapper" class="container clearfix">
 
+
 <header class="content clearfix">
 	<div class="hgroup">
-		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog</a></h1>
+		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s WordPress Dev Blog</a></h1>
 		<h3 class="slogan">Problem Solving for Website Owners and Designers</h2>
 		<p class="intro">&mdash;by a guy who loves WordPress. And I also love <a href='http://jekyllrb.com/'>Jekyll</a>.  This blog is made with Jekyll. Its hosted at my <a href='https://github.com/photocurio/'>Github</a> account.</p>
 	</div>
 	<div class="contact">
 		<p class="vcard">I live in <span class="locality">Somerville</span>, <span class="region">MA</span>.</p>
-		<p>I like to sail and row boats, play chess, brew beer and read novels.</p>
+		<p>I like to sail boats, play chess, and read novels.</p>
 		<p class="vcard"><em>tweet:</em> <span class="twitter"><a href="https://twitter.com/photocurio">@photocurio</a></span><br>
 		<em>email:</em> <span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span></p>
 	</div>
-</header>        	
+</header>
+        	
 
 <div class="single content">
 	<div class="post">
 		<div class="content">
 			<h1 class="posttitle">Categories, Tags and Custom Taxonomies for WordPress</h1>
 			<small class="meta">December 12, 2013</small>
-			<p>Wordpress comes with 2 taxonomies built in: Categories and Tags, but you can add <em>Custom Taxonomies</em> if you like.  I was building WP sites for three years before I needed to set up a custom taxonomy for a client. </p>
+			<p>Wordpress comes with 2 taxonomies built in: Categories and Tags, but you can add <em>Custom Taxonomies</em> if you like.  I was building WP sites for three years before I needed to set up a custom taxonomy for a client.</p>
 
 <p>There is a lot you can do with Categories and Tags. I’ve always told my clients “use as few categories as you need to organize your site, and as many tags as you like”. That sums it up.  Categories are to divide your content into sections, tags are open ended, and can be used to add keywords to your posts.</p>
 
@@ -80,14 +82,10 @@
 
 	</div><!-- #wrapper, .container -->
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js" rel=""></script>
-		<script src="/javascript/masonry.pkgd.min.js"></script>
+		<script src="/javascript/jquery.matchHeight-min.js"></script>
 		<script>
-			var $container = $('#wall');
-			// initialize
-			$container.masonry({
-			//columnWidth: 200,
-			itemSelector: '.brick'
-			});
+			$('.brick').matchHeight();
+
 		</script>
 
 		<script>
@@ -100,3 +98,4 @@
 		</script>
     </body>
 </html>
+

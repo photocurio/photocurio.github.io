@@ -6,7 +6,7 @@
 		<title> Assigning Templates to Categories by Peter Mumford </title>
 		<meta name="viewport" content="width=device-width">
 		<link href="http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700" rel="stylesheet">
-		<link href="/style.css" rel="stylesheet">
+		<link href="/css/style.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link href="/favicon.png" rel="icon">
 		<link href="http://petermumford.net/feed.xml" rel="alternate" type="application/atom+xml">
@@ -15,26 +15,28 @@
 	<body>
 		<div id="wrapper" class="container clearfix">
 
+
 <header class="content clearfix">
 	<div class="hgroup">
-		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s <span>W</span>ordPress Dev Blog</a></h1>
+		<h1 class="sitename"><a href="/">Peter Mumford&rsquo;s WordPress Dev Blog</a></h1>
 		<h3 class="slogan">Problem Solving for Website Owners and Designers</h2>
 		<p class="intro">&mdash;by a guy who loves WordPress. And I also love <a href='http://jekyllrb.com/'>Jekyll</a>.  This blog is made with Jekyll. Its hosted at my <a href='https://github.com/photocurio/'>Github</a> account.</p>
 	</div>
 	<div class="contact">
 		<p class="vcard">I live in <span class="locality">Somerville</span>, <span class="region">MA</span>.</p>
-		<p>I like to sail and row boats, play chess, brew beer and read novels.</p>
+		<p>I like to sail boats, play chess, and read novels.</p>
 		<p class="vcard"><em>tweet:</em> <span class="twitter"><a href="https://twitter.com/photocurio">@photocurio</a></span><br>
 		<em>email:</em> <span class="email"><a href="mailto:sunraydust@gmail.com" >sunraydust@gmail.com</a></span></p>
 	</div>
-</header>        	
+</header>
+        	
 
 <div class="single content">
 	<div class="post">
 		<div class="content">
 			<h1 class="posttitle">Assigning Templates to Categories</h1>
 			<small class="meta">April 4, 2015</small>
-			<p>WordPress has an odd way of handling category templates. You are supposed to create a file called <strong>category-wildlife.php</strong> for the ‘wildlife’ category.  While that is intuitive and simple, suppose you have 50 categories on your site, and 3 category layouts?  </p>
+			<p>WordPress has an odd way of handling category templates. You are supposed to create a file called <strong>category-wildlife.php</strong> for the ‘wildlife’ category.  While that is intuitive and simple, suppose you have 50 categories on your site, and 3 category layouts?</p>
 
 <p>You want to be able to edit a category, and assign it a template from your list of three choices. That’s how page templates work.  You certainly don’t want 50 template files for your 50 categories.</p>
 
@@ -42,7 +44,7 @@
 
 <ol>
   <li>
-    <p>Use <a href="https://wordpress.org/plugins/advanced-custom-fields/">Advanced Custom Fields</a> to put a custom field named ‘template’ on your categories. I made radio button fields, with one button corresponding to each category template that I’m using: <em>standard</em>, <em>sorted</em> and <em>tabbed</em>. I set standard as a default field. </p>
+    <p>Use <a href="https://wordpress.org/plugins/advanced-custom-fields/">Advanced Custom Fields</a> to put a custom field named ‘template’ on your categories. I made radio button fields, with one button corresponding to each category template that I’m using: <em>standard</em>, <em>sorted</em> and <em>tabbed</em>. I set standard as a default field.</p>
   </li>
   <li>
     <p>Create three category templates: category-standard.php, category-sorted.php, category-tabbed.php.</p>
@@ -52,20 +54,20 @@
   </li>
 </ol>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">function</span> <span class="nf">category_template_redirect</span><span class="p">()</span> <span class="p">{</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="k">function</span> <span class="nf">category_template_redirect</span><span class="p">()</span> <span class="p">{</span>
 	<span class="k">if</span><span class="p">(</span><span class="nx">is_category</span><span class="p">())</span> <span class="p">{</span>
 		<span class="nv">$this_cat</span> <span class="o">=</span> <span class="nx">get_the_category</span><span class="p">();</span>
-		<span class="nv">$template_field</span> <span class="o">=</span> <span class="nx">get_field</span><span class="p">(</span><span class="s1">&#39;template&#39;</span><span class="p">,</span> <span class="nv">$this_cat</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+		<span class="nv">$template_field</span> <span class="o">=</span> <span class="nx">get_field</span><span class="p">(</span><span class="s1">'template'</span><span class="p">,</span> <span class="nv">$this_cat</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 		<span class="k">if</span> <span class="p">(</span><span class="nx">have_posts</span><span class="p">())</span> <span class="p">{</span>
-			<span class="k">include</span><span class="p">(</span><span class="nx">TEMPLATEPATH</span> <span class="o">.</span> <span class="s1">&#39;/category-&#39;</span> <span class="o">.</span> <span class="nv">$template_field</span> <span class="o">.</span> <span class="s1">&#39;.php&#39;</span><span class="p">);</span>
+			<span class="k">include</span><span class="p">(</span><span class="nx">TEMPLATEPATH</span> <span class="o">.</span> <span class="s1">'/category-'</span> <span class="o">.</span> <span class="nv">$template_field</span> <span class="o">.</span> <span class="s1">'.php'</span><span class="p">);</span>
 			<span class="k">die</span><span class="p">();</span>
 		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-			<span class="nv">$wp_query</span><span class="o">-&gt;</span><span class="na">is_404</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+			<span class="nv">$wp_query</span><span class="o">-&gt;</span><span class="na">is_404</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 		<span class="p">}</span> 
 	<span class="p">}</span> 
 <span class="p">}</span>
-<span class="nx">add_action</span><span class="p">(</span> <span class="s1">&#39;template_redirect&#39;</span><span class="p">,</span> <span class="s1">&#39;category_template_redirect&#39;</span> <span class="p">);</span>
-<span class="cp">?&gt;</span><span class="x"></span></code></pre></div>
+<span class="nx">add_action</span><span class="p">(</span> <span class="s1">'template_redirect'</span><span class="p">,</span> <span class="s1">'category_template_redirect'</span> <span class="p">);</span>
+<span class="cp">?&gt;</span></code></pre></figure>
 
 
 		</div>
@@ -98,14 +100,10 @@
 
 	</div><!-- #wrapper, .container -->
 		<script src="https://code.jquery.com/jquery-2.1.3.min.js" rel=""></script>
-		<script src="/javascript/masonry.pkgd.min.js"></script>
+		<script src="/javascript/jquery.matchHeight-min.js"></script>
 		<script>
-			var $container = $('#wall');
-			// initialize
-			$container.masonry({
-			//columnWidth: 200,
-			itemSelector: '.brick'
-			});
+			$('.brick').matchHeight();
+
 		</script>
 
 		<script>
@@ -118,3 +116,4 @@
 		</script>
     </body>
 </html>
+
